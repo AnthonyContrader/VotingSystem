@@ -6,7 +6,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>Voting List</title>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	  $("#myInput").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $(".search").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	});
+
+</script>
+
 <style type="text/css">
 	#tableContainer {
 		display: block;
@@ -16,12 +30,31 @@
 		position: relative;
 	}
 	#tableContainer table {
+		height: 90%;
 		margin: 0;
   		position: absolute;
 		top: 50%;
   		left: 50%;
   		-ms-transform: translate(-50%, -50%);
   		transform: translate(-50%, -50%);
+	}
+	
+	#research {
+		display: block;
+		width: 100%;
+		height: 10%;
+		position: relative;
+	}
+	
+	
+	#research input {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 50%;
+		width: 30%;
 	}
 </style>
 </head>
@@ -71,7 +104,7 @@
 				for (UtenteVotanteDTO u : list) {
 			%>
 			<tr>
-				<td><%=u.getidutente()%></td>
+				<td class="search"><%=u.getidutente()%></td>
 				<td><%=u.getidscheda()%></td>
 				<td><%=u.getvoto()%></td>		
 			</tr>
@@ -79,6 +112,10 @@
 			%>
 			</tbody>
 	</table>
+	
+	<div id="research">
+		<input id="myInput" type="text" placeholder="Cerca id utente">
+	</div>
 </div>
 <!-- aggiungere funzione ricerca -->
 </div>

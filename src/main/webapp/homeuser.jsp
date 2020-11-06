@@ -8,8 +8,8 @@
 <meta charset="ISO-8859-1">
 <title>Home Utente</title>
 
-<link href="css/vittoriostyle.css" rel="stylesheet">
-<link href="css/styleHomeUser.css" rel="stylesheet">
+<link href="../css/vittoriostyle.css" rel="stylesheet">
+<link href="../css/styleHomeUser.css" rel="stylesheet">
 
 <script type="text/javascript">
 	
@@ -45,59 +45,69 @@
 </head>
 <body>
 <div id="bodyContainer">
-<%@include file="css/header.jsp"%>
 
-<div id="CorpoCentrale">
-<div class="navbar">
-  
-  <div id="btn1">Home</div>
-  <div id="btn2">Vota</div>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+  <%@include file="css/header.jsp"%>
 
-<div class="main">
-	
-	<div id="gen">
-		<div class="primaColonna">ID</div><div class="secondaColonna">${user.getId()}</div>
-		<div class="primaColonna">USERNAME</div><div class="secondaColonna">${user.getUsername()}</div>
-		<div class="primaColonna">TIPO UTENTE</div><div class="secondaColonna">${user.getUsertype()}</div>
+  <div class="navbar">
+  		<div id="logout">
+				<a href="LogoutServlet"><span>LOGOUT</span></a>
+			</div>
 	</div>
-	
-	<div class="listaSchede">
 
-	<%
-		List<SchedaVotazioneDTO> list = (List<SchedaVotazioneDTO>) request.getAttribute("list");
-	%>
+	<div id="CorpoCentrale">
+		<div class="menu">
+			<div id="btn1"><span>HOME</span></div>
+  			<div id="btn2"><span>VOTA</span></div>
 
-<br>
-	<table>
-		<tr>
-			<th>titolo</th>
-			<th></th>
-		<tr>
+		</div>
+
+	<div class="main">
+
+		<div id="gen">
+      <div id="tab">
+			     <div class="primaColonna"><span>ID</span></div><div class="secondaColonna"><span>${user.getId()}</span></div>
+			     <div class="primaColonna"><span>USERNAME</span></div><div class="secondaColonna"><span>{user.getUsername()}</span></div>
+			     <div class="primaColonna"><span>TIPO UTENTE</span></div><div class="secondaColonna"><span>${user.getUsertype()}</span></div>
+      </div>
+		</div>
+
+		<div class="listaSchede">
 		<%
-			for (SchedaVotazioneDTO s : list) {
+			List<SchedaVotazioneDTO> list = (List<SchedaVotazioneDTO>) request.getAttribute("list");
 		%>
-		<tr>
-			<td>
-				<%=s.getTitolo()%>
-			</td>
-			<td><a href="UtenteVotanteServlet?mode=control&id_scheda=<%=s.getId()%>">
-				VOTA
-			</a></td>
-		</tr>
-		<%
-			}
-		%>
-	</table>
+		<table>
+			<caption>
+				<h2>LISTA SCHEDE</h2>
+			</caption>
+			<thead>
+				<tr>
+					<th>TITOLO</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			<%
+				for (SchedaVotazioneDTO s : list) {
+			%>
+				<tr>
+					<td>
+						<%=s.getTitolo()%>
+					</td>
+					<td>
+						<a href="UtenteVotanteServlet?mode=control&id_scheda=<%=s.getId()%>">
+							VOTA
+						</a>
+					</td>
+				</tr>
+			<%
+				}
+			%>
+				</tbody>
+			</table>
+	</div>
 
+	</div>
 </div>
-	
-</div>
-</div>
-
-
-
 <%@ include file="css/footer.jsp" %>
 </div>
 </body>

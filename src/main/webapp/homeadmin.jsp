@@ -6,29 +6,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home Admin</title>
-<link href="css/vittoriostyle.css" rel="stylesheet">
+<link href="../css/vittoriostyle.css" rel="stylesheet">
+<link href="../css/styleHomeAdmin.css" rel="stylesheet">
 </head>
 <body>
-<%@include file="css/header.jsp"%>
+  <div id="bodyContainer">
 
+    <%@include file="css/header.jsp"%>
 
-<div class="navbar">
-  <a class="active" href="homeadmin.jsp">Home</a>
-  <a href="UserServlet?mode=userlist">Users</a>
-  <a href="SchedaVotazioneServlet?mode=schedelist">Gestione schede</a>
-  <a href="UtenteVotanteServlet?mode=votolist">Lista voti</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+    <div class="navbar">
+      <div id="logout">
+				<a href="LogoutServlet"><span>LOGOUT</span></a>
+			</div>
+    </div>
 
-<div class="main">
-<h1>Welcome ${user.getUsername()}</h1>
+    <div id="CorpoCentrale">
 
+      <div class="menu">
+        <div class="link"><a href="homeadmin.jsp"><span>HOME</span></a></div>
+        <div class="link"><a href="UserServlet?mode=userlist"><span>USERS<span/></a></div>
+        <div class="link"><a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a></div>
+        <div class="link"><a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a></div>
+      </div>
 
+      <div class="main">
+        <h1>Welcome ${user.getUsername()}</h1>
 
-</div>
+      </div>
 
+    </div>
 
-<%@ include file="css/footer.jsp" %>
-
+    <%@ include file="css/footer.jsp" %>
+  </div>
 </body>
 </html>

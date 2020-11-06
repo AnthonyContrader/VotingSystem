@@ -87,6 +87,12 @@ public class SchedaVotazioneServlet extends HttpServlet {
 			updateList(request);
 			getServletContext().getRequestDispatcher("/scheda/schedamanager.jsp").forward(request, response);
 			break;	
+			
+		case "BACK":
+			List<SchedaVotazioneDTO>listDTO = service.getAll();
+			request.setAttribute("list", listDTO);
+			getServletContext().getRequestDispatcher("/homeuser.jsp").forward(request, response);
+			break;
 		
 		}
 		
