@@ -6,8 +6,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home Admin</title>
-<link href="../css/vittoriostyle.css" rel="stylesheet">
-<link href="../css/styleHomeAdmin.css" rel="stylesheet">
+<link href=${pageContext.request.contextPath}/css/vittoriostyle.css rel="stylesheet">
+<link href=${pageContext.request.contextPath}/css/styleHomeAdmin.css rel="stylesheet">
 </head>
 <body>
   <div id="bodyContainer">
@@ -24,7 +24,7 @@
 
       <div class="menu">
         <div class="link"><a href="homeadmin.jsp"><span>HOME</span></a></div>
-        <div class="link"><a href="UserServlet?mode=userlist"><span>USERS<span/></a></div>
+        <div class="link"><a href="UserServlet?mode=userlist"><span>USERS</span></a></div>
         <div class="link"><a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a></div>
         <div class="link"><a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a></div>
       </div>

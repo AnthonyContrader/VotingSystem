@@ -93,9 +93,6 @@ public class UserServlet extends HttpServlet {
 			
 		case "BACK" :
 			List<SchedaVotazioneDTO> lista = schedaService.getAll();
-			for(SchedaVotazioneDTO s : lista) {
-				System.out.println(s.getTitolo());
-			}
 			request.setAttribute("list", lista);
 			getServletContext().getRequestDispatcher("/homeuser.jsp").forward(request, response);
 			

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
+<link rel="stylesheet" href=${pageContext.request.contextPath}/css/vittoriostyle.css />
 <title>Read Scheda</title>
 <style type="text/css">
 	#tableContainer {
@@ -29,22 +29,22 @@
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
 	<div id="logout">
-  		<a href="LogoutServlet"><span>Logout</span></a>
+  		<a href="LogoutServlet"><span>LOGOUT</span></a>
   	</div>
 </div>
 <div id="CorpoCentrale">
 <div class="menu">
   		<div class="link">
-  			<a href="homeadmin.jsp"><span>Home</span></a>
+  			<a href="homeadmin.jsp"><span>HOME</span></a>
   		</div>
   		<div class="link">
-  			<a class="active"  href="UserServlet?mode=userlist"><span>Users</span></a>
+  			<a class="active"  href="UserServlet?mode=userlist"><span>USER</span></a>
   		</div>
   		<div class="link">
-  			<a href="SchedaVotazioneServlet?mode=schedelist"><span>Gestione schede</span></a>
+  			<a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a>
   		</div>
   		<div class="link">
-  			<a href="UtenteVotanteServlet?mode=votolist"><span>Lista voti</span></a>
+  			<a href="UtenteVotanteServlet?mode=votolist"><span>LIASTA VOTI</span></a>
   		</div>
 	</div>
 

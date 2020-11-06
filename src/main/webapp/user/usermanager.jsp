@@ -5,13 +5,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
-<link href="../css/styleUserManager.css" rel="stylesheet">
+<link href=${pageContext.request.contextPath}/css/vittoriostyle.css rel="stylesheet">
+<link href=${pageContext.request.contextPath}/css/styleUserManager.css rel="stylesheet">
 
 <title>User Manager</title>
 </head>
 <div id="bodyContainer">
-    <%@include file="css/header.jsp"%>
+    <%@include file="../css/header.jsp"%>
 
     <div class="navbar">
       <div id="logout"><a href="LogoutServlet" id="logout"><span>LOGOUT</span></a></div>
@@ -21,15 +21,15 @@
     <div class="menu">
       <div class="link"><a href="homeadmin.jsp"><span>HOME</span></a></div>
       <div class="link"><a href="UserServlet?mode=userlist"><span>USERS</span></a></div>
+      <div class="link"><a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a></div>
+       <div class="link"><a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a></div>
     </div>
     <div class="main">
 
       <div id="mainContainer">
         <div id="tableContainerUtenti">
         <h2>LISTA UTENTI</h2>
-        <%
-		      List<UserDTO> list = (List<UserDTO>) request.getAttribute("list");
-	      %>
+        
 	       <table>
            <thead>
 		           <tr>
@@ -41,7 +41,9 @@
 		          </tr>
             </thead>
             <tbody>
-              <%
+            <%
+		      List<UserDTO> list = (List<UserDTO>) request.getAttribute("list");
+	  
 			           for (UserDTO u : list) {
 		          %>
 		            <tr>
@@ -100,7 +102,7 @@
        </div>
      </div>
    </div>
-   <%@ include file="css/footer.jsp" %>
+   <%@ include file="../css/footer.jsp" %>
  </div>
 </body>
 </html>

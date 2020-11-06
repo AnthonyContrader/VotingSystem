@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
+<link href=${pageContext.request.contextPath}/css/vittoriostyle.css rel="stylesheet">
 <title>Gestione schede</title>
 <style type="text/css">
 	#tableContainer {
@@ -36,6 +36,7 @@
 	width: 100%;
 	}
 	h2 {
+	margin: 0;
 	width: 100%;
 	text-align: center;
 	}

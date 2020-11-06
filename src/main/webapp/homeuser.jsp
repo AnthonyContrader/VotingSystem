@@ -8,8 +8,8 @@
 <meta charset="ISO-8859-1">
 <title>Home Utente</title>
 
-<link href="../css/vittoriostyle.css" rel="stylesheet">
-<link href="../css/styleHomeUser.css" rel="stylesheet">
+<link href=${pageContext.request.contextPath}/css/vittoriostyle.css rel="stylesheet">
+<link href=${pageContext.request.contextPath}/css/styleHomeUser.css rel="stylesheet">
 
 <script type="text/javascript">
 	
@@ -19,7 +19,7 @@
 		var btn2 = document.getElementById("btn2");
 		
 		btn1.addEventListener("click",function (){
-			var el1 = document.getElementsByClassName("main")[0];
+			var el1 = document.getElementById("gen");
 			var el2 = document.getElementsByClassName("listaSchede")[0];
 			var btn1 = document.getElementById("btn1");
 			var btn2 = document.getElementById("btn2");
@@ -30,7 +30,7 @@
 		});
 		
 		btn2.addEventListener("click",function (){
-			var el1 = document.getElementsByClassName("main")[0];
+			var el1 = document.getElementById("gen");
 			var el2 = document.getElementsByClassName("listaSchede")[0];
 			var btn1 = document.getElementById("btn1");
 			var btn2 = document.getElementById("btn2");
@@ -66,7 +66,7 @@
 		<div id="gen">
       <div id="tab">
 			     <div class="primaColonna"><span>ID</span></div><div class="secondaColonna"><span>${user.getId()}</span></div>
-			     <div class="primaColonna"><span>USERNAME</span></div><div class="secondaColonna"><span>{user.getUsername()}</span></div>
+			     <div class="primaColonna"><span>USERNAME</span></div><div class="secondaColonna"><span>${user.getUsername()}</span></div>
 			     <div class="primaColonna"><span>TIPO UTENTE</span></div><div class="secondaColonna"><span>${user.getUsertype()}</span></div>
       </div>
 		</div>

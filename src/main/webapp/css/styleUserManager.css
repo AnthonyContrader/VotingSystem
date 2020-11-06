@@ -93,21 +93,31 @@
   float: left;
   height: 100%;
   width: 70%;
+  position: relative;
 }
 
 #tableContainerUtenti h2 {
-  display: block;
   height: 10%;
   width: 100%;
   text-align: center;
+  margin: 0;
 
 }
 
 #tableContainerUtenti table{
-  display: block;
-  width:95%;
+ 
   overflow: auto;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+
+
+
+
 
 #formInsertUtente {
   display: block;
@@ -123,5 +133,5 @@
 }
 
 .footer{
-  clear: both:
+  clear: both;
 }

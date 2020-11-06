@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
+<link href=${pageContext.request.contextPath}/css/vittoriostyle.css rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>Voting List</title>
 
@@ -14,23 +14,21 @@ $(document).ready(function(){
 	  $("#myInput").on("keyup", function() {
 	    var value = $(this).val().toLowerCase();
 	    $(".search").filter(function() {
-	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	      $(this).closest("tr").toggle($(this).text().toLowerCase().indexOf(value) > -1)
 	    });
 	  });
 	});
-
 </script>
 
 <style type="text/css">
 	#tableContainer {
 		display: block;
 		width: 80%;
-		height: 100%;
+		height: 90%;
 		margin: 0 auto;
 		position: relative;
 	}
 	#tableContainer table {
-		height: 90%;
 		margin: 0;
   		position: absolute;
 		top: 50%;
@@ -69,16 +67,16 @@ $(document).ready(function(){
 <div id ="CorpoCentrale">
 <div class="menu">
   		<div class="link">
-  			<a href="homeadmin.jsp"><span>Home</span></a>
+  			<a href="homeadmin.jsp"><span>HOME</span></a>
   		</div>
   		<div class="link">
-  			<a class="active"  href="UserServlet?mode=userlist"><span>Users</span></a>
+  			<a class="active"  href="UserServlet?mode=userlist"><span>USERS</span></a>
   		</div>
   		<div class="link">
-  			<a href="SchedaVotazioneServlet?mode=schedelist"><span>Gestione schede</span></a>
+  			<a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a>
   		</div>
   		<div class="link">
-  			<a href="UtenteVotanteServlet?mode=votolist"><span>Lista voti</span></a>
+  			<a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a>
   		</div>
 	</div>
 <div class="main">
@@ -112,13 +110,13 @@ $(document).ready(function(){
 			%>
 			</tbody>
 	</table>
+	</div>
 	
 	<div id="research">
 		<input id="myInput" type="text" placeholder="Cerca id utente">
 	</div>
 </div>
 <!-- aggiungere funzione ricerca -->
-</div>
 </div>
 <%@ include file="../css/footer.jsp" %>
 </div>
