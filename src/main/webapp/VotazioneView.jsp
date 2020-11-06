@@ -8,12 +8,19 @@
 <title>Read User</title>
 </head>
 <body>
+<div id= "bodyContainer">
+
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
-  
-  
-  <a href="LogoutServlet" id="logout">Logout</a>
+
+<a href="LogoutServlet" id="logout">Logout</a>
 </div>
+<div id ="CorpoCentrale">
+<div id="menu">
+  
+ <a href = "Schedavotazioneservlet?mode=back">indietro</a>
+ </div>
+
 <br>
 
 <div class="main">
@@ -41,12 +48,17 @@
         ATTENZIONE HAI GIA' VOTATO IN QUESTA SCHEDA 
         <a href = UserServlet?mode=back>INDIETRO</a>
         <br />
-    <%
+     <%
     	}
      %>
 </div> 
+ 
+ 
 
 <%@ include file="../css/footer.jsp" %>
+</div> 
+</div>
+
 </body>
 </html>
     

@@ -8,16 +8,19 @@
 <body>
 	
 		<form class="login" action="LoginServlet" method="post">
-
-				<label for="user">Username: </label>
+			<div id="usernamerow">
+				<label for="username">Username: </label>
 			
 				<input type="text" id="user" name="username" placeholder="Insert username">
-		
-				<label for="pass">Password: </label>
+			</div>
+			<div id="passrow">
+				<label for="password">Password: </label>
 			
 				 <input type="password" id="pass" name="password" placeholder="Insert password">
-		
+			</div>
+			<div id="bottonrow">
 			<button type="submit" value="Login" name="pulsante">Login</button>
+			</div>
 		</form>
 
 	

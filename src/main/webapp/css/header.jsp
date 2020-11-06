@@ -7,11 +7,8 @@
 <link href="css/vittoriostyle.css" rel="stylesheet">
 </head>
 <body>
-
-<div class="header">SAMPLE Project
+<div class="header">
+<span>SAMPLE Project</span>
 </div>
-
-
-
 </body>
 </html>

@@ -7,23 +7,75 @@
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
 <title>Gestione schede</title>
+<style type="text/css">
+	#tableContainer {
+		width: 70%;
+		height: 100%;
+		display: block;
+		float: left;
+		position: relative;
+	}
+	#formContainer {
+	width: 30%;
+	height: 100%;
+	display: block;
+	float: right;
+	position: relative;
+	}
+	.footer {
+	clear: both;
+	}
+	#formInsert, #tableContainer table{
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+	}
+	#formInsert {
+	width: 100%;
+	}
+	h2 {
+	width: 100%;
+	text-align: center;
+	}
+</style>
 </head>
 <body>
+<div id= "bodyContainer">
 <%@ include file="../css/header.jsp" %>
 
 <div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
-  <a class="active" href="UserServlet?mode=userlist">Users</a>
-  <a href="SchedaVotazioneServlet?mode=schedelist">Gestione schede</a>
-  <a href="UtenteVotanteServlet?mode=votolist">Lista voti</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+  <div id="logout">
+  		<a href="LogoutServlet"><span>LOGOUT</span></a>
+  	</div>
+  </div>
+  
+  <div id="CorpoCentrale">
+  <div class="menu">
+  		<div class="link">
+  			<a href="homeadmin.jsp"><span>HOME</span></a>
+  		</div>
+  		<div class="link">
+  			<a class="active"  href="UserServlet?mode=userlist"><span>USERS</span></a>
+  		</div>
+  		<div class="link">
+  			<a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a>
+  		</div>
+  		<div class="link">
+  			<a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a>
+  		</div>
+	</div>
 <div class="main">
 	<%
 		List<SchedaVotazioneDTO> list = (List<SchedaVotazioneDTO>) request.getAttribute("list");
 	%>
-
-<br>
+	
+<div id="tableContainer">
+	
+		<h2>
+			GESTIONE SCHEDE
+		</h2>
 
 	<table>
 		<tr>
@@ -47,55 +99,57 @@
 			}
 		%>
 	</table>
+</div>
 
-
-
-<form id="floatright" action="SchedaVotazioneServlet?mode=insert" method="post">
+<div id="formContainer">
+<form id="formInsert" action="SchedaVotazioneServlet?mode=insert" method="post">
   <div class="row">
-    <div class="col-25">
+    <div class="col-1">
       <label for="titolo">Titolo</label>
     </div>
-    <div class="col-75">
+    <div class="col-2">
       <input type="text" id="titolo" name="titolo" placeholder="inserisci titolo">
     </div>
   </div>
   <div class="row">
-    <div class="col-25">
-     <label for="domanda">domanda</label>
+    <div class="col-1">
+     <label for="domanda">Domanda</label>
     </div>
-    <div class="col-75">
+    <div class="col-2">
       <input type="text" id="domanda" name="domanda" placeholder="inserisci domanda"> 
     </div>
   </div>
   <div class="row">
-    <div class="col-25">
+    <div class="col-1">
       <label for="risposta1">Risposta1</label>
     </div>
-   		 <div class="col-75">
+   		 <div class="col-2">
  			<input type="text" id="risposta1" name="risposta1" placeholder="inserisci risposta1"> 
     	</div>
   </div>
   <div class="row">
-    <div class="col-25">
+    <div class="col-1">
       <label for="risposta2">Risposta2</label>
     </div>
-   		 <div class="col-75">
+   		 <div class="col-2">
  			<input type="text" id="risposta2" name="risposta2" placeholder="inserisci risposta2"> 
     	</div>
   </div>
   <div class="row">
-    <div class="col-25">
+    <div class="col-1">
       <label for="risposta3">Risposta3</label>
     </div>
-   		 <div class="col-75">
+   		 <div class="col-2">
  			<input type="text" id="risposta3" name="risposta3" placeholder="inserisci risposta3"> 
     	</div>
   </div>
       <button type="submit" >Insert</button>
 </form>
-
+</div>
+</div>
 </div>
 <br>
 <%@ include file="../css/footer.jsp" %>
+</div>
 </body>
 </html>
