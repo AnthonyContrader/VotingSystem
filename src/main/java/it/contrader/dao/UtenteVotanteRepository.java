@@ -16,5 +16,5 @@ public interface UtenteVotanteRepository extends CrudRepository<UtenteVotante, L
 	
 	
 	@Query("SELECT * FROM utentevotante u WHERE u.id_utente = :id_utente AND u.id_scheda = :id_scheda")
-    public double findByIdutenteAndIdscheda(@Param("id_utente") long id_utente, @Param("id_scheda") long id_scheda);
+    public UtenteVotante findByIdutenteAndIdscheda(@Param("id_utente") long id_utente, @Param("id_scheda") long id_scheda);
 }

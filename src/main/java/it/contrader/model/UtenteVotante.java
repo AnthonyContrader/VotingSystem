@@ -1,6 +1,5 @@
 package it.contrader.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +17,8 @@ public class UtenteVotante {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	private int id_utente;
 	private int id_scheda;
 	private int voto;

@@ -19,7 +19,7 @@ public class UtenteVotanteService extends AbstractService<UtenteVotante, UtenteV
 
 	public boolean checkUser(int id_scheda, int id_utente) {
 		return converter.checkUser(repository.findByIdutenteAndIdscheda(id_utente, id_scheda));
-		}
+	}
 	
 	public double[] getStatistica(int id_scheda) {
 		double[] ar = new double[3];
