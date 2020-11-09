@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.contrader.dto.UserDTO;
 import it.contrader.model.User.Usertype;
 import it.contrader.service.UserService;
+import lombok.Data;
+import lombok.Getter;
 
 @Controller
 @RequestMapping("/user")
@@ -27,6 +29,7 @@ public class UserController {
 		UserDTO userDTO = service.findByUsernameAndPassword(username, password);
 		request.getSession().setAttribute("user", userDTO);
 
+		
 		switch (userDTO.getUsertype()) {
 
 		case ADMIN:
