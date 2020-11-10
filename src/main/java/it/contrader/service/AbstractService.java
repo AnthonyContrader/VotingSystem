@@ -19,27 +19,22 @@ public abstract class AbstractService<Entity, DTO> implements ServiceDTO<DTO> {
 	public AbstractService() {
 	}
 
-	@Override
 	public DTO insert(DTO dto) {
 		return converter.toDTO(crudRepository.save(converter.toEntity(dto)));
 	}
 
-	@Override
 	public List<DTO> getAll() {
 		return converter.toDTOList((crudRepository.findAll()));
 	}
 
-	@Override
 	public DTO read(long id) {
 		return converter.toDTO(crudRepository.findById(id).get());
 	}
 
-	@Override
 	public DTO update(DTO dto) {
 		return converter.toDTO(crudRepository.save(converter.toEntity(dto)));
 	}
 
-	@Override
 	public void delete(long id) {
 		crudRepository.deleteById(id);
 	}

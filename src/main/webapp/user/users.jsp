@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href=${pageContext.request.contextPath}/css/vittoriostyle.css rel="stylesheet">
-<link href=${pageContext.request.contextPath}/css/styleUserManager.css rel="stylesheet">
+<link href="/css/vittoriostyle.css" rel="stylesheet">
+<link href="/css/styleUserManager.css" rel="stylesheet">
 
 <title>User Manager</title>
 </head>

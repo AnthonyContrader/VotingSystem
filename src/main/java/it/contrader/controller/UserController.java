@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.UserDTO;
-import it.contrader.model.User.Usertype;
+import it.contrader.service.SchedaVotazioneService;
 import it.contrader.service.UserService;
 
 @Controller
@@ -24,16 +24,19 @@ public class UserController {
 	public String login(HttpServletRequest request, @RequestParam(value = "username", required = true) String username,
 			@RequestParam(value = "password", required = true) String password) {
 
-		UserDTO userDTO = service.findByUsernameAndPassword(username, password);
+		UserDTO userDTO = (UserDTO) service.findByUsernameAndPassword(username, password);
+		String tipo = userDTO.getUsertype();
 		request.getSession().setAttribute("user", userDTO);
 
 		
-		switch (userDTO.getUsertype()) {
+		switch (tipo) {
 
-		case ADMIN:
+		case "ADMIN":
 			return "homeadmin";
 
-		case USER:
+		case "USER":
+			SchedaVotazioneService schedaService = new SchedaVotazioneService();
+			request.setAttribute("list", schedaService.getAll());
 			return "homeuser";
 
 		default:
@@ -62,7 +65,7 @@ public class UserController {
 
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") int id, @RequestParam("username") String username,
-			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
+			@RequestParam("password") String password, @RequestParam("usertype") String usertype) {
 
 		UserDTO dto = new UserDTO();
 		dto.setId(id);
@@ -77,7 +80,7 @@ public class UserController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("username") String username,
-			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
+			@RequestParam("password") String password, @RequestParam("usertype") String usertype) {
 		UserDTO dto = new UserDTO();
 		dto.setUsername(username);
 		dto.setPassword(password);

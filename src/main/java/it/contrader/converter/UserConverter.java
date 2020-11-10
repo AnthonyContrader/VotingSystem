@@ -9,7 +9,6 @@ import it.contrader.model.User;
 @Component
 public class UserConverter extends AbstractConverter<User, UserDTO> {
 
-	@Override
 	public User toEntity(UserDTO userDTO) {
 		User user = null;
 		if (userDTO != null) {
@@ -18,7 +17,6 @@ public class UserConverter extends AbstractConverter<User, UserDTO> {
 		return user;
 	}
 
-	@Override
 	public UserDTO toDTO(User user) {
 		UserDTO userDTO = null;
 		if (user != null) {

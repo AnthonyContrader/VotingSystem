@@ -9,7 +9,6 @@ import it.contrader.model.SchedaVotazione;
 @Component
 public class SchedaVotazioneConverter extends AbstractConverter<SchedaVotazione, SchedaVotazioneDTO> {
 	
-	@Override
 	public SchedaVotazione toEntity(SchedaVotazioneDTO schedaDTO) {
 		SchedaVotazione scheda = null;
 		if (schedaDTO != null) {
@@ -18,7 +17,6 @@ public class SchedaVotazioneConverter extends AbstractConverter<SchedaVotazione,
 		return scheda;
 	}
 
-	@Override
 	public SchedaVotazioneDTO toDTO(SchedaVotazione scheda) {
 		SchedaVotazioneDTO schedaDTO = null;
 		if (scheda != null) {

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href=${pageContext.request.contextPath}/css/vittoriostyle.css rel="stylesheet">
+<link href="/css/vittoriostyle.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>Voting List</title>
 

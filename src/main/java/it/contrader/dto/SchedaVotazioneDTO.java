@@ -13,13 +13,13 @@ public class SchedaVotazioneDTO {
 	
 	private int id;
 	
-	private String titolo;
+	private String Titolo;
 	
-	private String domanda;
+	private String Domanda;
 	
-	private String risposta1;
+	private String Risposta1;
 	
-	private String risposta2;
+	private String Risposta2;
 	
-	private String risposta3;
+	private String Risposta3;
 }

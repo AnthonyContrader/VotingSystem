@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href=${pageContext.request.contextPath}/css/vittoriostyle.css  rel="stylesheet">
+<link href="/css/vittoriostyle.css"  rel="stylesheet">
 <title>Lista Voti</title>
 <style type="text/css">
 

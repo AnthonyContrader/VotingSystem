@@ -9,7 +9,7 @@ import it.contrader.model.UtenteVotante;
 
 @Repository
 @Transactional
-public interface UtenteVotanteRepository extends CrudRepository<UtenteVotante, Integer> {
+public interface UtenteVotanteRepository extends CrudRepository<UtenteVotante, Long> {
 	
 	@Query(value = "SELECT COUNT(*) AS total FROM utentevotante u WHERE u.id_scheda = :id_scheda AND u.voto = :voto", nativeQuery = true)
     public double countVoto(@Param("id_scheda") int id_scheda, @Param("voto") int voto);

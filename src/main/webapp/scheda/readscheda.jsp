@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href=${pageContext.request.contextPath}/css/vittoriostyle.css />
+<link rel="stylesheet" href="/css/vittoriostyle.css" />
 <title>Read Scheda</title>
 <style type="text/css">
 	#tableContainer {

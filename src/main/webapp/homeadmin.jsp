@@ -6,8 +6,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home Admin</title>
-<link href=${pageContext.request.contextPath}/css/vittoriostyle.css rel="stylesheet">
-<link href=${pageContext.request.contextPath}/css/styleHomeAdmin.css rel="stylesheet">
+<link href="/css/vittoriostyle.css" rel="stylesheet">
+<link href="/css/styleHomeAdmin.css" rel="stylesheet">
 </head>
 <body>
   <div id="bodyContainer">

@@ -7,6 +7,7 @@ import it.contrader.model.SchedaVotazione;
 
 @Repository
 @Transactional
-public interface SchedaVotazioneRepository extends CrudRepository<SchedaVotazione, Integer> {
+public interface SchedaVotazioneRepository extends CrudRepository<SchedaVotazione, Long> {
+	
 	
 }

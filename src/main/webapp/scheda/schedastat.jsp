@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href=${pageContext.request.contextPath}/css/vittoriostyle.css  rel="stylesheet">
-<link href=${pageContext.request.contextPath}/css/fileProvvisorio.css  rel="stylesheet">
+<link href="/css/vittoriostyle.css"  rel="stylesheet">
+<link href="/css/fileProvvisorio.css" rel="stylesheet">
 <title>Statistica scheda id<%=Integer.parseInt(request.getParameter("id_scheda"))%></title>
 <style type="text/css">
 #tableContainer{
