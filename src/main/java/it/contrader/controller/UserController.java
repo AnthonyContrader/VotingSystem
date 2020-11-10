@@ -50,20 +50,20 @@ public class UserController {
 	}
 
 	@GetMapping("/delete")
-	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
+	public String delete(HttpServletRequest request, @RequestParam("id") int id) {
 		service.delete(id);
 		setAll(request);
 		return "users";
 	}
 
 	@GetMapping("/preupdate")
-	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
+	public String preUpdate(HttpServletRequest request, @RequestParam("id") int id) {
 		request.getSession().setAttribute("dto", service.read(id));
 		return "updateuser";
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("username") String username,
+	public String update(HttpServletRequest request, @RequestParam("id") int id, @RequestParam("username") String username,
 			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
 
 		UserDTO dto = new UserDTO();

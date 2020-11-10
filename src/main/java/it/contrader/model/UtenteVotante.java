@@ -17,7 +17,7 @@ public class UtenteVotante {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	private int id_utente;
 	private int id_scheda;

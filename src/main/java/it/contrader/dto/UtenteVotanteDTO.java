@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UtenteVotanteDTO {
 	
-	private Long id;
+	private int id;
 	
 	private int id_utente;
 	

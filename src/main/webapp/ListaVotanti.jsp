@@ -102,9 +102,9 @@ $(document).ready(function(){
 				for (UtenteVotanteDTO u : list) {
 			%>
 			<tr>
-				<td class="search"><%=u.getidutente()%></td>
-				<td><%=u.getidscheda()%></td>
-				<td><%=u.getvoto()%></td>		
+				<td class="search"><%=u.getId_utente()%></td>
+				<td><%=u.getId_scheda()%></td>
+				<td><%=u.getVoto()%></td>		
 			</tr>
 			<%	}
 			%>

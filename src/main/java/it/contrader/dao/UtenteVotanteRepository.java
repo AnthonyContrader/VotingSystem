@@ -9,12 +9,12 @@ import it.contrader.model.UtenteVotante;
 
 @Repository
 @Transactional
-public interface UtenteVotanteRepository extends CrudRepository<UtenteVotante, Long> {
+public interface UtenteVotanteRepository extends CrudRepository<UtenteVotante, Integer> {
 	
-	@Query("SELECT COUNT(*) AS total FROM utentevotante u WHERE u.id_scheda = :id_scheda AND u.voto = :voto")
-    public double countVoto(@Param("id_scheda") long id_scheda, @Param("voto") int voto);
+	@Query(value = "SELECT COUNT(*) AS total FROM utentevotante u WHERE u.id_scheda = :id_scheda AND u.voto = :voto", nativeQuery = true)
+    public double countVoto(@Param("id_scheda") int id_scheda, @Param("voto") int voto);
+			  
 	
-	
-	@Query("SELECT * FROM utentevotante u WHERE u.id_utente = :id_utente AND u.id_scheda = :id_scheda")
-    public UtenteVotante findByIdutenteAndIdscheda(@Param("id_utente") long id_utente, @Param("id_scheda") long id_scheda);
+	@Query(value = "SELECT * FROM utentevotante u WHERE u.id_utente = :id_utente AND u.id_scheda = :id_scheda", nativeQuery = true)
+    public UtenteVotante findByIdutenteAndIdscheda(@Param("id_utente") int id_utente, @Param("id_scheda") int id_scheda);
 }

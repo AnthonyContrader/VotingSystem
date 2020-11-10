@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SchedaVotazioneDTO {
 	
-	private Long id;
+	private int id;
 	
 	private String titolo;
 	
