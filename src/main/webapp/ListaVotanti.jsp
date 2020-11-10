@@ -61,7 +61,7 @@ $(document).ready(function(){
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
   <div id="logout">
-  		<a href="LogoutServlet"><span>LOGOUT</span></a>
+  		<a href="/user/logout"><span>LOGOUT</span></a>
   	</div>
   </div>
 <div id ="CorpoCentrale">
@@ -70,13 +70,13 @@ $(document).ready(function(){
   			<a href="homeadmin.jsp"><span>HOME</span></a>
   		</div>
   		<div class="link">
-  			<a class="active"  href="UserServlet?mode=userlist"><span>USERS</span></a>
+  			<a class="active"  href="/user/getall"><span>USERS</span></a>
   		</div>
   		<div class="link">
-  			<a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a>
+  			<a href="/schedavotazione/getall"><span>SCHEDE</span></a>
   		</div>
   		<div class="link">
-  			<a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a>
+  			<a href="utentevotante/getall"><span>LISTA VOTI</span></a>
   		</div>
 	</div>
 <div class="main">

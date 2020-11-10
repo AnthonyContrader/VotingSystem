@@ -102,13 +102,13 @@
 <%@ include file="../css/header.jsp" %>
 	<div class="navbar">
   		<div id="logout">
-				<a href="LogoutServlet"><span>LOGOUT</span></a>
+				<a href="/user/logout"><span>LOGOUT</span></a>
 			</div>
 	</div>
 <div id ="CorpoCentrale">
 
 	<div class="menu">  
- 		<div class="link"><a href = "SchedaVotazioneServlet?mode=back"><span>HOME</span></a></div>
+ 		<div class="link"><a href = "homeuser.jsp"><span>HOME</span></a></div>
  	</div>
 
 <div class="main">
@@ -119,7 +119,7 @@
  		<div id ="SchedaTitolo" ><%=s.getTitolo()%></div>
  		<div id ="Domanda" ><%=s.getDomanda()%></div>
  		<div id="responseContainer">
-		<form id ="repsonseInsert" action="UtenteVotanteServlet" method="post">
+		<form id ="repsonseInsert" action="/utentevotante/insert">
 			<input type="text" name="id_scheda" value="<%=s.getId()%>" style="display:none" readonly>
 			<input type="text" name="mode" value="insert" style="display:none" readonly>
 			<div id="rowR1">
@@ -145,7 +145,7 @@
     	} else {
      %>    
         <p>ATTENZIONE HAI GIA' VOTATO IN QUESTA SCHEDA</p>
-        <p>Clicca<a href = UserServlet?mode=back>QUI</a> per tornare indietro</p>
+        <p>Clicca <a href = "homeuser.jsp">QUI</a> per tornare indietro</p>
         
      <%
     	}

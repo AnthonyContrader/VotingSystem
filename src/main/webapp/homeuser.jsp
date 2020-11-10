@@ -50,7 +50,7 @@
 
   <div class="navbar">
   		<div id="logout">
-				<a href="LogoutServlet"><span>LOGOUT</span></a>
+				<a href="/user/logout"><span>LOGOUT</span></a>
 			</div>
 	</div>
 
@@ -94,7 +94,7 @@
 						<%=s.getTitolo()%>
 					</td>
 					<td>
-						<a href="UtenteVotanteServlet?mode=control&id_scheda=<%=s.getId()%>">
+						<a href="/utentevotante/control?id_scheda=<%=s.getId()%>">
 							VOTA
 						</a>
 					</td>

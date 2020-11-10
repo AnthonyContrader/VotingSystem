@@ -48,25 +48,17 @@
 
 <div class="navbar">
   <div id="logout">
-  		<a href="LogoutServlet"><span>LOGOUT</span></a>
+  		<a href="/user/logout"><span>LOGOUT</span></a>
   	</div>
   </div>
   
   <div id="CorpoCentrale">
   <div class="menu">
-  		<div class="link">
-  			<a href="homeadmin.jsp"><span>HOME</span></a>
-  		</div>
-  		<div class="link">
-  			<a class="active"  href="UserServlet?mode=userlist"><span>USERS</span></a>
-  		</div>
-  		<div class="link">
-  			<a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a>
-  		</div>
-  		<div class="link">
-  			<a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a>
-  		</div>
-	</div>
+      <div class="link"><a href="homeadmin.jsp"><span>HOME</span></a></div>
+      <div class="link"><a href=/user/getall><span>USERS</span></a></div>
+      <div class="link"><a href=/schedavotazione/getall><span>SCHEDE</span></a></div>
+       <div class="link"><a href=/utentevotante/getall><span>LISTA VOTI</span></a></div>
+    </div>
 <div class="main">
 	<%
 		List<SchedaVotazioneDTO> list = (List<SchedaVotazioneDTO>) request.getAttribute("list");
@@ -91,10 +83,10 @@
 		%>
 		<tr>
 			<td><%=s.getTitolo()%></td>
-			<td><a href=SchedaVotazioneServlet?mode=read&id_scheda=<%=s.getId()%>>LEGGI</a></td>
-			<td><a href=SchedaVotazioneServlet?mode=read&update=true&id_scheda=<%=s.getId()%>>MODIFICA</a></td>
-			<td><a href=SchedaVotazioneServlet?mode=delete&id_scheda=<%=s.getId()%>>ELIMINA</a></td>			
-			<td><a href=UtenteVotanteServlet?mode=stat&id_scheda=<%=s.getId()%>>STAT</a></td>
+			<td><a href=/schedavotazione/read?id_scheda=<%=s.getId()%>>LEGGI</a></td>
+			<td><a href=/schedavotazione/preupdate?id_scheda=<%=s.getId()%>>MODIFICA</a></td>
+			<td><a href=/schedavotazione/delete?id_scheda=<%=s.getId()%>>ELIMINA</a></td>			
+			<td><a href=/utentevotante/statistica?id_scheda=<%=s.getId()%>>STAT</a></td>
 		</tr>
 		<%
 			}
@@ -103,7 +95,7 @@
 </div>
 
 <div id="formContainer">
-<form id="formInsert" action="SchedaVotazioneServlet?mode=insert" method="post">
+<form id="formInsert" action="/schedavotazione/insert" method="post">
   <div class="row">
     <div class="col-1">
       <label for="titolo">Titolo</label>

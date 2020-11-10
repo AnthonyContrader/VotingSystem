@@ -37,17 +37,25 @@
 
 <div class="navbar">
     <div id="logout">
-        <a href="LogoutServlet"><span>LOGOUT</span></a>
+        <a href="/user/logout"><span>LOGOUT</span></a>
     </div>
 </div>
 
 <div id="CorpoCentrale">
     <div class="menu">
-        <div class="link"><a href="homeadmin.jsp"><span>HOME</span></a></div>
-        <div class="link"><a href="UserServlet?mode=userlist"><span>USERS</span></a></div>
-        <div class="link"><a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a></div>
-        <div class="link"><a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a></div>
-    </div>
+  		<div class="link">
+  			<a href="homeadmin.jsp"><span>HOME</span></a>
+  		</div>
+  		<div class="link">
+  			<a class="active"  href="/user/getall"><span>USERS</span></a>
+  		</div>
+  		<div class="link">
+  			<a href="schedavotazione/getall"><span>SCHEDE</span></a>
+  		</div>
+  		<div class="link">
+  			<a href="utentevotante/getall"><span>LISTA VOTI</span></a>
+  		</div>
+	</div>
 
     <div class="main">
 	<%double[] risultati = (double[]) request.getAttribute("risultati");%>

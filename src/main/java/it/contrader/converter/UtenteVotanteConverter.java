@@ -34,10 +34,6 @@ public class UtenteVotanteConverter extends AbstractConverter<UtenteVotante, Ute
 		return false;
 	}
 	
-	public double getStatistica (double aperc) {
-		double perc;
-		perc = aperc;
-		return perc;
-	}
+	
 }
 

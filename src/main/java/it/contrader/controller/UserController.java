@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.contrader.dto.UserDTO;
 import it.contrader.model.User.Usertype;
 import it.contrader.service.UserService;
-import lombok.Data;
-import lombok.Getter;
 
 @Controller
 @RequestMapping("/user")
@@ -36,7 +34,7 @@ public class UserController {
 			return "homeadmin";
 
 		case USER:
-			return "index";
+			return "homeuser";
 
 		default:
 			return "index";
@@ -46,20 +44,20 @@ public class UserController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "users";
+		return "/user/users";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") int id) {
 		service.delete(id);
 		setAll(request);
-		return "users";
+		return "/user/users";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") int id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updateuser";
+		return "/user/updateuser";
 	}
 
 	@PostMapping("/update")
@@ -73,7 +71,7 @@ public class UserController {
 		dto.setUsertype(usertype);
 		service.update(dto);
 		setAll(request);
-		return "users";
+		return "/user/users";
 
 	}
 
@@ -86,13 +84,13 @@ public class UserController {
 		dto.setUsertype(usertype);
 		service.insert(dto);
 		setAll(request);
-		return "users";
+		return "/user/users";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readuser";
+		return "/user/readuser";
 	}
 
 	@GetMapping("/logout")

@@ -14,15 +14,15 @@
     <%@include file="../css/header.jsp"%>
 
     <div class="navbar">
-      <div id="logout"><a href="LogoutServlet" id="logout"><span>LOGOUT</span></a></div>
+      <div id="logout"><a href="/user/logout" id="logout"><span>LOGOUT</span></a></div>
     </div>
     <div id="CorpoCentrale">
 
     <div class="menu">
       <div class="link"><a href="homeadmin.jsp"><span>HOME</span></a></div>
-      <div class="link"><a href="UserServlet?mode=userlist"><span>USERS</span></a></div>
-      <div class="link"><a href="SchedaVotazioneServlet?mode=schedelist"><span>SCHEDE</span></a></div>
-       <div class="link"><a href="UtenteVotanteServlet?mode=votolist"><span>LISTA VOTI</span></a></div>
+      <div class="link"><a href=/user/getall><span>USERS</span></a></div>
+      <div class="link"><a href=/schedavotazione/getall><span>SCHEDE</span></a></div>
+       <div class="link"><a href=/utentevotante/getall><span>LISTA VOTI</span></a></div>
     </div>
     <div class="main">
 
@@ -47,15 +47,15 @@
 			           for (UserDTO u : list) {
 		          %>
 		            <tr>
-			               <td><a href=UserServlet?mode=read&id=<%=u.getId()%>>
+			               <td><a href=/user/read?id=<%=u.getId()%>>
 					                  <%=u.getUsername()%>
 			                  </a>
                     </td>
 			              <td><%=u.getPassword()%></td>
 			              <td><%=u.getUsertype()%></td>
-			              <td><a href=UserServlet?mode=read&update=true&id=<%=u.getId()%>>MODIFICA</a>
+			              <td><a href=/user/preupdate?id=<%=u.getId()%>>MODIFICA</a>
 			              </td>
-			              <td><a href=UserServlet?mode=delete&id=<%=u.getId()%>>ELIMINA</a>
+			              <td><a href=/user/delete?id=<%=u.getId()%>>ELIMINA</a>
 			              </td>
               </tr>
               <%
@@ -65,7 +65,7 @@
 	         </table>
          </div>
          <div id="formInsertUtente">
-           <form id="dataInsert" action="UserServlet?mode=insert" method="post">
+           <form id="dataInsert" action="/user/insert" method="post">
              <div class="tableForm">
              <div class="rowForm">
                <div class="col-1">

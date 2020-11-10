@@ -23,9 +23,9 @@ public class UtenteVotanteService extends AbstractService<UtenteVotante, UtenteV
 	
 	public double[] getStatistica(int id_scheda) {
 		double[] ar = new double[3];
-		ar[0] = (double)converter.getStatistica(repository.countVoto(id_scheda, 1));
-		ar[1] = (double)converter.getStatistica(repository.countVoto(id_scheda, 2));
-		ar[2] = (double)converter.getStatistica(repository.countVoto(id_scheda, 3));
+		ar[0] = (double)repository.countVoto(id_scheda, 1);
+		ar[1] = (double)repository.countVoto(id_scheda, 2);
+		ar[2] = (double)repository.countVoto(id_scheda, 3);
 		return  ar;
 
 	}
