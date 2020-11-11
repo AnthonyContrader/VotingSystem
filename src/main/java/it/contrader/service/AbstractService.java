@@ -1,5 +1,7 @@
 package it.contrader.service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,13 @@ public abstract class AbstractService<Entity, DTO> implements ServiceDTO<DTO> {
 	}
 
 	public List<DTO> getAll() {
-		return converter.toDTOList((crudRepository.findAll()));
+		List<DTO> list = new ArrayList<DTO>();
+		Iterator<DTO> iterate = converter.toDTOList(crudRepository.findAll()).iterator();
+		while(iterate.hasNext()) {
+			list.add(iterate.next());
+		}
+		
+		return list;
 	}
 
 	public DTO read(long id) {

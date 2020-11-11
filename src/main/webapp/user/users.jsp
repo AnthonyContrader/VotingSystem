@@ -9,6 +9,124 @@
 <link href="/css/styleUserManager.css" rel="stylesheet">
 
 <title>User Manager</title>
+
+
+<style type="text/css">
+	#tableContainer {
+		width: 70%;
+		height: 100%;
+		display: block;
+		float: left;
+		position: relative;
+	}
+	#formContainer {
+	width: 30%;
+	height: 100%;
+	display: block;
+	float: right;
+	position: relative;
+	}
+	.footer {
+	clear: both;
+	}
+	#tableContainer table{
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+	}
+	#dataInsert{
+		background-color: #a0a6ab;
+	}
+	
+	.container{
+		width: 95%;
+		height: 70%;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	
+	input[type=text]{
+		
+		width: 90%;
+		height: 30%;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.col-1{
+		float: left;
+		width: 30%;
+		height: 100%;
+		
+		position: relative;
+	}
+	
+	.col-1 span{
+		
+		font-size: 1.2em;
+		color: white;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.col-2 {
+		float: right;
+		width: 70%;
+		height: 100%;
+		position: relative;
+	}
+	
+	.row {
+		clear: both;
+		width: 100%;
+		height: 20%;
+		
+	}
+	
+	#btn{
+		clear: both;
+		width: 100%;
+		height: 15%;
+		position: relative;
+	}
+	
+	button[type=submit]{
+	
+		width: 80%;
+		heigth: 75%;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);		
+	}
+	
+	.row select{
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);	
+	}
+	
+	h2 {
+	margin: 0;
+	width: 100%;
+	text-align: center;
+	}
+</style>
 </head>
 <div id="bodyContainer">
     <%@include file="../css/header.jsp"%>
@@ -66,8 +184,8 @@
          </div>
          <div id="formInsertUtente">
            <form id="dataInsert" action="/user/insert" method="post">
-             <div class="tableForm">
-             <div class="rowForm">
+             <div class="container">
+             <div class="row">
                <div class="col-1">
                  <span>Username</span>
                </div>
@@ -75,7 +193,7 @@
                 <input type="text" id="user" name="username" placeholder="inserisci username">
               </div>
             </div>
-            <div class="rowForm">
+            <div class="row">
               <div class="col-1">
                 <span>Password</span>
               </div>
@@ -83,7 +201,7 @@
                 <input type="text" id="pass" name="password" placeholder="inserisci password">
               </div>
             </div>
-            <div class="rowForm">
+            <div class="row">
               <div class="col-1">
                 <span>Usertype</span>
               </div>
@@ -94,8 +212,11 @@
 			           </select>
     	       </div>
            </div>
-
-           <button type="submit" >Insert</button>
+			
+			<div id="btn">
+				<button type="submit" >Insert</button>
+			</div>
+           
          </div>
          </form>
        </div>

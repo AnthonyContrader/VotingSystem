@@ -35,7 +35,7 @@ public class SchedaVotazioneController {
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id_scheda") int id_scheda) {
-		request.getSession().setAttribute("dto", service.read(id_scheda));
+		request.setAttribute("dto", service.read(id_scheda));
 		return "/scheda/schedaupdate";
 	}
 
@@ -74,12 +74,12 @@ public class SchedaVotazioneController {
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id_scheda") int id_scheda) {
-		request.getSession().setAttribute("dto", service.read(id_scheda));
+		request.setAttribute("dto", service.read(id_scheda));
 		return "/scheda/readscheda";
 	}
 
 	private void setAll(HttpServletRequest request) {
-		request.getSession().setAttribute("list", service.getAll());
+		request.setAttribute("list", service.getAll());
 	}
 
 	

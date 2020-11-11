@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import it.contrader.dto.UserDTO;
 import it.contrader.service.SchedaVotazioneService;
@@ -26,6 +27,7 @@ public class UserController {
 
 		UserDTO userDTO = (UserDTO) service.findByUsernameAndPassword(username, password);
 		String tipo = userDTO.getUsertype();
+		System.out.println(tipo);
 		request.getSession().setAttribute("user", userDTO);
 
 		
@@ -47,6 +49,7 @@ public class UserController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
+		System.out.println("t0");
 		return "/user/users";
 	}
 
@@ -59,7 +62,7 @@ public class UserController {
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") int id) {
-		request.getSession().setAttribute("dto", service.read(id));
+		request.setAttribute("dto", service.read(id));
 		return "/user/updateuser";
 	}
 
@@ -92,9 +95,21 @@ public class UserController {
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
-		request.getSession().setAttribute("dto", service.read(id));
+		request.setAttribute("dto", service.read(id));
 		return "/user/readuser";
 	}
+	
+	/*@GetMapping("/home")
+	public String home(HttpServletRequest request) {
+		
+		UserDTO u = (UserDTO) request.getSession().getAttribute("user");
+		if(u.getUsertype().equals("ADMIN"))			
+			return "redirect:/homeadmin";
+	
+		return "redirect:/homeuser.jsp";
+	}*/
+	
+
 
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request) {
@@ -103,6 +118,6 @@ public class UserController {
 	}
 
 	private void setAll(HttpServletRequest request) {
-		request.getSession().setAttribute("list", service.getAll());
+		request.setAttribute("list", service.getAll());
 	}
 }

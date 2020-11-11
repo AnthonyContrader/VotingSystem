@@ -76,6 +76,6 @@ public class UtenteVotanteController {
 	}
 	
 	private void setAll(HttpServletRequest request) {
-		request.getSession().setAttribute("list", service.getAll());
+		request.setAttribute("list", service.getAll());
 	}
 }

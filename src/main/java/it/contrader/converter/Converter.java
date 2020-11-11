@@ -1,6 +1,6 @@
 package it.contrader.converter;
 
-import java.util.List;
+
 
 public interface Converter<Entity, DTO> {
 
@@ -8,6 +8,6 @@ public interface Converter<Entity, DTO> {
 
 	public DTO toDTO(Entity entity);
 
-	public List<DTO> toDTOList(Iterable<Entity> entityList);
+	public Iterable<DTO> toDTOList(Iterable<Entity> entityList);
 
 }

@@ -33,8 +33,85 @@
 		transform: translate(-50%, -50%); 
 	}
 	#formInsert {
+	display:block;
 	width: 100%;
+	height: 100%;
+	background-color: #a0a6ab;
+	position: relative;
 	}
+	
+	.container{
+		width: 95%;
+		height: 70%;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	
+	input[type=text]{
+		
+		width: 90%;
+		height: 30%;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.col-1{
+		float: left;
+		width: 30%;
+		height: 100%;
+		font-size: 0.9em;
+		color: white;
+		font-weight: bold;
+		position: relative;
+	}
+	
+	.col-1 label{
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.col-2 {
+		float: right;
+		width: 70%;
+		height: 100%;
+		position: relative;
+	}
+	
+	.row {
+		clear: both;
+		width: 100%;
+		height: 15%;
+		
+	}
+	
+	#btn{
+		clear: both;
+		width: 100%;
+		height: 15%;
+		position: relative;
+	}
+	
+	button[type=submit]{
+	
+		width: 80%;
+		heigth: 75%;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);		
+	}
+	
 	h2 {
 	margin: 0;
 	width: 100%;
@@ -96,6 +173,7 @@
 
 <div id="formContainer">
 <form id="formInsert" action="/schedavotazione/insert" method="post">
+	<div class="container">
   <div class="row">
     <div class="col-1">
       <label for="titolo">Titolo</label>
@@ -136,12 +214,16 @@
  			<input type="text" id="risposta3" name="risposta3" placeholder="inserisci risposta3"> 
     	</div>
   </div>
-      <button type="submit" >Insert</button>
+  <div id="btn">
+  	<button type="submit" >Insert</button>
+  </div>
+  </div>
+  
+      
 </form>
 </div>
 </div>
 </div>
-<br>
 <%@ include file="../css/footer.jsp" %>
 </div>
 </body>
