@@ -8,12 +8,24 @@
 <link href="/css/fileProvvisorio.css"  rel="stylesheet">
 <title>Update card</title>
 <style type="text/css">
+
+#CorpoCentrale{
+	margin-bottom: 1%;
+}
 #formContainer{
     display: block;
     height: 100%;
     width: 80%;
     margin: 0 auto;
     position: relative;
+}
+
+.header {
+	height: 15%;
+}
+
+div.navbar {
+	padding: 0;
 }
 
 #formUpdate{
@@ -26,8 +38,8 @@
 
 .dati input{
     width: 100%;
-    height: 15%;
-    display: block;
+    height: 10%;
+    padding: 0;
 }
 
 .dati{
@@ -35,6 +47,18 @@
     width: 80%;
     height: 80%;
     margin: 0 auto;
+    position: relative;
+}
+
+#container{
+
+	width: 80%;
+	height: 80%;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .bottone{
@@ -45,8 +69,7 @@
     position: relative;
 }
 
-.bottone input{
-    display: block;
+.bottone input[type=submit]{
     height: 50%;
     width: 100%;
     margin: 0;
@@ -54,6 +77,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.footer {
+	margin: 0;
+	padding: 0;
+	height: 10%;
 }
 
 </style>
@@ -92,6 +121,7 @@
 <div id="formContainer">
 	<form id="formUpdate" action="/schedavotazione/update" method="post">
 <div class="dati">
+	<div id="container">
 		<input type="text" id ="SchedaTitolo" name ="titolo" value ="<%=s.getTitolo()%>" required>
 		<input type="text" id ="Domanda" name ="domanda" value ="<%=s.getDomanda() %>" required>
 
@@ -99,6 +129,8 @@
 		<input type="text" id="Risposta2" name ="risposta2" value ="<%=s.getRisposta2()%>" required>
 		<input type="text" id="Risposta3" name ="risposta3" value ="<%=s.getRisposta3()%>" required>
 		<input type="text" name ="id_scheda" value = "<%=s.getId() %>" style = "display:none" readonly>
+	</div>	
+	
 </div>
 <div class="bottone">
       <input type = "submit" value = "invia">

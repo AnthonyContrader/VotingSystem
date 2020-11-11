@@ -29,22 +29,28 @@ public class UserController {
 			@RequestParam(value = "password", required = true) String password) {
 
 		UserDTO userDTO = (UserDTO) service.findByUsernameAndPassword(username, password);
-		String tipo = userDTO.getUsertype();
-		request.getSession().setAttribute("user", userDTO);
+		
+		if(userDTO != null) {
+		
+			String tipo = userDTO.getUsertype();
+			request.getSession().setAttribute("user", userDTO);
 
 		
-		switch (tipo) {
+			switch (tipo) {
 
-		case "ADMIN":
-			return "homeadmin";
+			case "ADMIN":
+				return "homeadmin";
 
-		case "USER":			
-			request.setAttribute("list", schedaService.getAll());
-			return "homeuser";
+			case "USER":			
+				request.setAttribute("list", schedaService.getAll());
+				return "homeuser";
 
-		default:
-			return "index";
+			default:
+				return "index";
+			}
 		}
+		
+		return "index";
 	}
 
 	@GetMapping("/getall")

@@ -157,24 +157,6 @@ h2 {
 
 /*Login*/
 
-.log {
-	width:95%;
-	z-index:-1;
-	opacity:0.4;
-	position:absolute;
-
-
-}
-.login {
-	position:fixed;
-	height:50%;
-	width:20%;
-	margin-left:35.6%;
-	margin-right:44.4%;
-	margin-top:10%;
-	margin-bottom:auto;
-	z-index:1;
-}
 
 #usernamerow input, #passrow input {
 	text-align: center;
@@ -189,26 +171,29 @@ h2 {
 	text-align: center;
 	display: block;
 }
-#usernamerow label[for=username]{
-	margin-top: 3%;
-}
 
 #usernamerow {
 	width: 100%;
-	height: 40%;
+	height: 30%;
 	display: block;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 #passrow {
 	width: 100%;
-	height: 40%;
+	height: 30%;
 	display: block;
 	clear: both;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 #bottonrow {
 	height: 20%;
 	width: 100%;
 	display: block;
 	clear: both;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
 /* Anchors */
