@@ -33,18 +33,20 @@ public class UtenteVotanteController {
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("id") int id, @RequestParam("id_utente") int id_utente,
+	public String insert(HttpServletRequest request,
 		@RequestParam("id_scheda") int id_scheda, @RequestParam("voto") int voto ) {
+		UserDTO u = (UserDTO) request.getSession().getAttribute("user");
+		int id_utente = u.getId();
 		UtenteVotanteDTO dto = new UtenteVotanteDTO();
-		dto.setId(id);
 		dto.setId_scheda(id_scheda);
 		dto.setId_utente(id_utente);
 		dto.setVoto(voto);
-		setAll(request);
+		service.insert(dto);
+		setAllschede(request);
 		return "homeuser";
 	}
 	
-	@PostMapping("/control")
+	@GetMapping("/control")
 	public String control(HttpServletRequest request, @RequestParam("id_scheda") int id_scheda) {
 		UserDTO u = (UserDTO) request.getSession().getAttribute("user");
 		int id_utente = u.getId();
@@ -58,7 +60,7 @@ public class UtenteVotanteController {
 		return "VotazioneView";
 	}
 	
-	@PostMapping("/statistica")
+	@GetMapping("/statistica")
 	public String statistica(HttpServletRequest request, @RequestParam("id_scheda") int id_scheda) {
 		SchedaVotazioneDTO s = servicescheda.read(id_scheda);
 		double[] risultati = service.getStatistica(id_scheda);
@@ -77,5 +79,9 @@ public class UtenteVotanteController {
 	
 	private void setAll(HttpServletRequest request) {
 		request.setAttribute("list", service.getAll());
+	}
+	
+	private void setAllschede(HttpServletRequest request) {
+		request.setAttribute("list", servicescheda.getAll());
 	}
 }

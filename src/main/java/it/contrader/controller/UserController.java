@@ -20,6 +20,9 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
+	
+	@Autowired
+	private SchedaVotazioneService schedaService;
 
 	@PostMapping("/login")
 	public String login(HttpServletRequest request, @RequestParam(value = "username", required = true) String username,
@@ -27,7 +30,6 @@ public class UserController {
 
 		UserDTO userDTO = (UserDTO) service.findByUsernameAndPassword(username, password);
 		String tipo = userDTO.getUsertype();
-		System.out.println(tipo);
 		request.getSession().setAttribute("user", userDTO);
 
 		
@@ -36,8 +38,7 @@ public class UserController {
 		case "ADMIN":
 			return "homeadmin";
 
-		case "USER":
-			SchedaVotazioneService schedaService = new SchedaVotazioneService();
+		case "USER":			
 			request.setAttribute("list", schedaService.getAll());
 			return "homeuser";
 
@@ -49,7 +50,6 @@ public class UserController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		System.out.println("t0");
 		return "/user/users";
 	}
 
@@ -94,20 +94,20 @@ public class UserController {
 	}
 
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
+	public String read(HttpServletRequest request, @RequestParam("id") int id) {
 		request.setAttribute("dto", service.read(id));
 		return "/user/readuser";
 	}
 	
-	/*@GetMapping("/home")
+	@GetMapping("/home")
 	public String home(HttpServletRequest request) {
 		
 		UserDTO u = (UserDTO) request.getSession().getAttribute("user");
 		if(u.getUsertype().equals("ADMIN"))			
-			return "redirect:/homeadmin";
-	
-		return "redirect:/homeuser.jsp";
-	}*/
+			return "homeadmin";
+		setAllschede(request);
+		return "homeuser";
+	}
 	
 
 
@@ -120,4 +120,9 @@ public class UserController {
 	private void setAll(HttpServletRequest request) {
 		request.setAttribute("list", service.getAll());
 	}
+	
+	private void setAllschede(HttpServletRequest request) {
+		request.setAttribute("list", schedaService.getAll());
+	}
+	
 }

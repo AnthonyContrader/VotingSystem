@@ -27,9 +27,9 @@ public class UtenteVotanteConverter extends AbstractConverter<UtenteVotante, Ute
 
 	public boolean checkUser(UtenteVotante utentev) {
 		if(utentev != null) {
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 	
 	

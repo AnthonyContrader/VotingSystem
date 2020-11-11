@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Home Utente</title>
 
-<link href="css/vittoriostyle.css" rel="stylesheet">
+<link href="/css/vittoriostyle.css" rel="stylesheet">
 <link href="/css/styleHomeUser.css" rel="stylesheet">
 
 <script type="text/javascript">

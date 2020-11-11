@@ -108,7 +108,7 @@
 <div id ="CorpoCentrale">
 
 	<div class="menu">  
- 		<div class="link"><a href = "homeuser.jsp"><span>HOME</span></a></div>
+ 		<div class="link"><a href ="/user/home"><span>HOME</span></a></div>
  	</div>
 
 <div class="main">
@@ -119,19 +119,19 @@
  		<div id ="SchedaTitolo" ><%=s.getTitolo()%></div>
  		<div id ="Domanda" ><%=s.getDomanda()%></div>
  		<div id="responseContainer">
-		<form id ="repsonseInsert" action="/utentevotante/insert">
+		<form id ="repsonseInsert" action="/utentevotante/insert" method="post">
 			<input type="text" name="id_scheda" value="<%=s.getId()%>" style="display:none" readonly>
 			<input type="text" name="mode" value="insert" style="display:none" readonly>
 			<div id="rowR1">
-				<input type="radio" id="R1" name="risposta" value="1" >
+				<input type="radio" id="R1" name="voto" value="1" >
 				<label for="R1"><span><%=s.getRisposta1()%></span></label>
 			</div>
 			<div id="rowR2">
-				<input type="radio" id="R2" name="risposta" value="2" >
+				<input type="radio" id="R2" name="voto" value="2" >
 				<label for="R2"><span><%=s.getRisposta2()%></span></label>
 			</div>
 			<div id="rowR3">
-				<input type="radio" id="R3" name="risposta" value="3" >
+				<input type="radio" id="R3" name="voto" value="3" >
 				<label for="R3"><span><%=s.getRisposta3()%></span></label>
 			
 			</div>
@@ -145,7 +145,7 @@
     	} else {
      %>    
         <p>ATTENZIONE HAI GIA' VOTATO IN QUESTA SCHEDA</p>
-        <p>Clicca <a href = "homeuser.jsp">QUI</a> per tornare indietro</p>
+        <p>Clicca <a href = "/user/home">QUI</a> per tornare indietro</p>
         
      <%
     	}

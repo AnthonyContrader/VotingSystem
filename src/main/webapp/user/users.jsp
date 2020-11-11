@@ -137,7 +137,7 @@
     <div id="CorpoCentrale">
 
     <div class="menu">
-      <div class="link"><a href="homeadmin.jsp"><span>HOME</span></a></div>
+      <div class="link"><a href="/user/home"><span>HOME</span></a></div>
       <div class="link"><a href=/user/getall><span>USERS</span></a></div>
       <div class="link"><a href=/schedavotazione/getall><span>SCHEDE</span></a></div>
        <div class="link"><a href=/utentevotante/getall><span>LISTA VOTI</span></a></div>

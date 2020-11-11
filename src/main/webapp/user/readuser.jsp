@@ -36,16 +36,16 @@
  
 	<div class="menu">
   		<div class="link">
-  			<a href="homeadmin.jsp"><span>HOME</span></a>
+  			<a href="/user/home"><span>HOME</span></a>
   		</div>
   		<div class="link">
   			<a class="active"  href="/user/getall"><span>USERS</span></a>
   		</div>
   		<div class="link">
-  			<a href="schedavotazione/getall"><span>SCHEDE</span></a>
+  			<a href="/schedavotazione/getall"><span>SCHEDE</span></a>
   		</div>
   		<div class="link">
-  			<a href="utentevotante/getall"><span>LISTA VOTI</span></a>
+  			<a href="/utentevotante/getall"><span>LISTA VOTI</span></a>
   		</div>
 	</div>
   <div class="main">

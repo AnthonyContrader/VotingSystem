@@ -58,17 +58,20 @@ public class SchedaVotazioneController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("id_scheda") int id_scheda, @RequestParam("titolo") String titolo,
+	public String insert(HttpServletRequest request, @RequestParam("titolo") String titolo,
 		@RequestParam("domanda") String domanda, @RequestParam("risposta1") String risposta1, @RequestParam("risposta2") String risposta2,
 		@RequestParam("risposta3") String risposta3) {
+		System.out.println("t1");
 		SchedaVotazioneDTO dto = new SchedaVotazioneDTO();
-		dto.setId(id_scheda);
 		dto.setTitolo(titolo);
 		dto.setDomanda(domanda);
 		dto.setRisposta1(risposta1);
 		dto.setRisposta2(risposta2);
 		dto.setRisposta3(risposta3);
+		System.out.println("t2");
+		service.insert(dto);
 		setAll(request);
+		
 		return "/scheda/schedamanager";
 	}
 
