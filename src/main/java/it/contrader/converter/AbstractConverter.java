@@ -15,7 +15,7 @@ import java.util.List;
  */
 public abstract class AbstractConverter<Entity,DTO> implements Converter<Entity,DTO> {
 
-	public List<Entity> toEntityList (Iterable<DTO> listDTO) {
+	public List<Entity> toEntityList (List<DTO> listDTO) {
 		List<Entity> list = new ArrayList<Entity>();
 
 		if(listDTO != null) {

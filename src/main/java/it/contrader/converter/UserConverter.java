@@ -1,5 +1,7 @@
 package it.contrader.converter;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import it.contrader.dto.UserDTO;
@@ -34,5 +36,11 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 			
 		}
 		return userDTO;
+	}
+
+	@Override
+	public List<User> toEntityList(Iterable<UserDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

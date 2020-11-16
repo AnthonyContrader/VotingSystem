@@ -19,7 +19,7 @@ import it.contrader.model.User;
  */
 @Repository
 @Transactional
-public interface UserRepository extends CrudRepository<User, Long>{
+public interface UserRepository extends CrudRepository<User, Integer>{
 
 	User findByUsernameAndPassword(String username, String password);
 	

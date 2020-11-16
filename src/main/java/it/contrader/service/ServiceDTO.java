@@ -1,5 +1,7 @@
 package it.contrader.service;
 
+import java.util.List;
+
 /**
  * Questa interfaccia firma i metodi dei Service. Osservare che, a differenza di
  * AbstactService, dipende solo dal parametro DTO.
@@ -12,13 +14,13 @@ package it.contrader.service;
  */
 public interface ServiceDTO<DTO> {
 	
-	public Iterable<DTO> getAll();
+	public List<DTO> getAll();
 
-	public DTO read(long id);
+	public DTO read(int id);
 	
 	public DTO insert (DTO dto);
 	
 	public DTO update (DTO dto);
 	
-	public void delete (long id);
+	public void delete (int id);
 }

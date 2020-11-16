@@ -1,5 +1,7 @@
 package it.contrader.converter;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import it.contrader.dto.SchedaVotazioneDTO;
@@ -24,6 +26,12 @@ public class SchedaVotazioneConverter extends AbstractConverter<SchedaVotazione,
 
 		}
 		return schedaDTO;
+	}
+
+	@Override
+	public List<SchedaVotazione> toEntityList(Iterable<SchedaVotazioneDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

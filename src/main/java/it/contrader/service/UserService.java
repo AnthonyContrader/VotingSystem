@@ -1,7 +1,9 @@
 package it.contrader.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.contrader.converter.UserConverter;
 import it.contrader.dao.UserRepository;
 import it.contrader.dto.UserDTO;
 import it.contrader.model.User;
@@ -20,9 +22,14 @@ public class UserService extends AbstractService<User,UserDTO> {
 	
 	//ALL crud methods in AbstractService
 	
+	@Autowired
+	private UserConverter converter;
+	@Autowired
+	private UserRepository crudRepository;
+	
 	//LOGIN method
 	public UserDTO findByUsernameAndPassword(String username, String password) {
-		return converter.toDTO(((UserRepository)repository).findByUsernameAndPassword(username, password));
+		return converter.toDTO(crudRepository.findByUsernameAndPassword(username, password));
 	}
 
 }

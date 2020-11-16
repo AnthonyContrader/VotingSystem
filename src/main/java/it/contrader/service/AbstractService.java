@@ -1,5 +1,9 @@
 package it.contrader.service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.repository.CrudRepository;
@@ -22,32 +26,38 @@ import it.contrader.converter.Converter;
 public abstract class AbstractService<Entity,DTO> implements ServiceDTO<DTO> {
 	
 	@Autowired
-	protected CrudRepository<Entity,Long> repository;
+	protected CrudRepository<Entity,Integer> crudRepository;
 	@Autowired
 	protected Converter<Entity,DTO> converter;
 	
 	@Override
 	public DTO insert(DTO dto) {
-		return converter.toDTO(repository.save(converter.toEntity(dto)));
+		return converter.toDTO(crudRepository.save(converter.toEntity(dto)));
 	}
 
 	@Override
-	public Iterable<DTO> getAll() {
-		return converter.toDTOList(repository.findAll());
+	public List<DTO> getAll() {
+		List<DTO> list = new ArrayList<DTO>();
+		Iterator<DTO> iterate = converter.toDTOList(crudRepository.findAll()).iterator();
+		while(iterate.hasNext()) {
+			list.add(iterate.next());
+		}
+		
+		return list;
 	}
 
 	@Override
-	public DTO read(long id) {
-		return converter.toDTO(repository.findById(id).get());
+	public DTO read(int id) {
+		return converter.toDTO(crudRepository.findById(id).get());
 	}
 
 	@Override
 	public DTO update(DTO dto) {
-		return converter.toDTO(repository.save(converter.toEntity(dto)));
+		return converter.toDTO(crudRepository.save(converter.toEntity(dto)));
 	}
 
 	@Override
-	public void delete(long id) {
-		repository.deleteById(id);
+	public void delete(int id) {
+		crudRepository.deleteById(id);
 	}
 }
