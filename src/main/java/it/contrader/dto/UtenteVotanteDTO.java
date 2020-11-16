@@ -6,26 +6,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * DTO della classe User. Ha gli stessi attributi di User
- * 
- * @author Vittorio Valent & Girolamo Murdaca
- * 
- *@see User
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-public class UserDTO {
-
+public class UtenteVotanteDTO {
+	
 	private int id;
 	
-	private String username;
+	private int id_utente;
 	
-	private String password;
-
-	private String usertype;
+	private int id_scheda;
 	
-
+	private int voto;
 }
