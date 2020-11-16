@@ -26,20 +26,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class User {
 	
-	public enum Usertype {
-		ADMIN,
-		USER
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private int id;
 	
 	@Column(unique = true)
 	private String username;
 	
 	private String password;
 
-	private Usertype usertype;
+	private String usertype;
 	
 }
