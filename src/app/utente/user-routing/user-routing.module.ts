@@ -4,7 +4,9 @@ import {UserDashboardComponent} from '../user-dashboard/user-dashboard.component
 import { UserLayoutComponent } from '../../layout/user-layout/user-layout.component';
 
 const routes: Routes = [
-  { path: 'user-dashboard', component: UserDashboardComponent }
+  { path: 'user-dashboard', component: UserLayoutComponent, children: [
+    {path: '', component: UserDashboardComponent}
+  ]}
 ];
 
 
