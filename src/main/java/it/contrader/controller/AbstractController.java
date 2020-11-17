@@ -1,6 +1,8 @@
 package it.contrader.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +31,7 @@ public abstract class AbstractController <DTO>{
 	private ServiceDTO<DTO> service;
 	
 	@GetMapping("/getall")
-	public Iterable<DTO> getAll(){
+	public List<DTO> getAll(){
 		return service.getAll();		
 	}
 	
