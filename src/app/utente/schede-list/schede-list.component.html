@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <table class="table table-hover">
+       <thead>
+          <tr>
+            <th>
+              TITOLO
+            </th>
+            <th>
+              STATO
+            </th>  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let scheda of listaSchede; let voto of checkVoti">
+            <td>
+              {{ scheda.titolo }}
+            </td>
+            <td>
+              <div *ngIf="voto; else elseBlock">
+                <a [routerLink]="['/user-dashboard/votazione', {id_scheda: scheda.id}]" >
+                  <i class="fas fa-circle" style="color: red"></i>
+                </a>
+              </div>
+              <ng-template #elseBlock><i class="fas fa-circle" style="color: green"></i></ng-template>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
