@@ -46,6 +46,7 @@ export class VotazioneComponent implements OnInit {
     );
 
     this.getScheda();
+  
   }
 
   getScheda(){

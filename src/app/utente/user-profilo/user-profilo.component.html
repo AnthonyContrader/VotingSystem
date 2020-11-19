@@ -1,0 +1,25 @@
+<div class="container" >
+    <!-- form Username e password -->
+    <div class="row">
+      <div class="col">
+        <form (ngSubmit)="submit(usertoupdate)">
+          <div class="row">
+            <div class="col">
+              <input type="text" [(ngModel)]="usertoupdate.username" name="username" placeholder="{{usertoupdate.username}}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" [(ngModel)]="usertoupdate.password" name="password" placeholder="{{usertoupdate.password}}"> 
+            </div>
+          </div>        
+          <div class="row">
+            <div class="col">
+              <button type="submit" class="btn btn-primary">invia</button>
+            </div>
+          </div>         
+        </form>
+      </div>
+    </div>  
+</div>
+

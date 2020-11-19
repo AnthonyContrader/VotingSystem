@@ -12,6 +12,7 @@ import { SchedeListComponent } from './utente/schede-list/schede-list.component'
 import { SchedaComponent } from './scheda/scheda.component';
 import { UtenteVotanteComponent } from './utente-votante/utente-votante.component';
 import { VotazioneComponent } from './utente/votazione/votazione.component';
+import { UserProfiloComponent } from './utente/user-profilo/user-profilo.component';
 
 /** 
  * Modulo principale dell'applicazione. Qui vengono importati i moduli secondari. L'UNICA component
@@ -27,6 +28,7 @@ import { VotazioneComponent } from './utente/votazione/votazione.component';
     SchedaComponent,
     UtenteVotanteComponent,
     VotazioneComponent,
+    UserProfiloComponent,
     
   ],
   imports: [
