@@ -1,0 +1,21 @@
+*{
+    font-size: 18px;
+}
+
+.form{
+    width: 60vh;
+    height: 50vh;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    vertical-align: middle;
+}
+
+form{
+    display: block;
+    width: 100vh;
+    height: 100vh;
+
+}

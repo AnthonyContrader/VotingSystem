@@ -19,19 +19,19 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
-    this.service.getAll().subscribe(users => this.users = users);
+    this.service.getAll().subscribe(users => {this.users = users}, undefined, null);
   }
 
   delete(user: UserDTO) {
-    this.service.delete(user.id).subscribe(() => this.getUsers());
+    this.service.delete(user.id).subscribe(() => {this.getUsers()}, undefined, null);
   }
 
   update(user: UserDTO) {
-    this.service.update(user).subscribe(() => this.getUsers());
+    this.service.update(user).subscribe(() => {this.getUsers()}, undefined, null);
   }
 
   insert(user: UserDTO) {
-    this.service.insert(user).subscribe(() => this.getUsers());
+    this.service.insert(user).subscribe(() => {this.getUsers()}, undefined, null);
   }
 
   clear(){

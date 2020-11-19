@@ -13,17 +13,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let scheda of listaSchede; let voto of checkVoti">
+          <tr *ngFor="let scheda of listaSchede; let i = index ">
             <td>
               {{ scheda.titolo }}
             </td>
-            <td>
-              <div *ngIf="voto; else elseBlock">
-                <a [routerLink]="['/user-dashboard/votazione', {id_scheda: scheda.id}]" >
-                  <i class="fas fa-circle" style="color: red"></i>
-                </a>
-              </div>
-              <ng-template #elseBlock><i class="fas fa-circle" style="color: green"></i></ng-template>
+            <td>    
+             <div *ngIf="checkVoti[i] == true; then thenBlock else elseBlock"></div>              
+              <ng-template #thenBlock><a [routerLink]="['/user-dashboard/votazione', {id_scheda: scheda.id}]" >
+                <i class="fas fa-circle" style="color: red"></i>
+              </a>
+            </ng-template>
+            <ng-template #elseBlock><i class="fas fa-circle" style="color: green"></i></ng-template>
             </td>
           </tr>
         </tbody>

@@ -1,17 +1,56 @@
-<p>
-  {{ schedaDTO.titolo }}
-</p>
-<p>
-  {{ schedaDTO.domanda }}
-</p>
-<p>
-  {{ schedaDTO.risposta1 }}
-</p>
-<p>
-  {{ schedaDTO.risposta2}}
-</p>
-<p>
-  {{ schedaDTO.risposta3 }}
-</p>
 
+<div class="container" >
+  <div class="container">
+    <!-- titolo -->
+    <div class="row">
+      <div class="col">
+        <h2 style=" vertical-align: middle;">{{ schedaDTO.titolo }}</h2>
+      </div>
+    </div>
+
+    <!-- Domanda -->
+    <div class="row">
+      <div class="col">
+        <h3 style=" vertical-align: middle;">{{ schedaDTO.domanda }}</h3>
+
+      </div>
+    </div>
+
+    <!-- form risposte -->
+    <div class="row">
+      <div class="col">
+        <form (ngSubmit)="submit(utenteVtoinsert)">
+          <input type="text" [(ngModel)]="utenteVtoinsert.id_scheda" name="id_scheda" style="display: none;">
+          <input type="text" [(ngModel)]="utenteVtoinsert.id_utente" name="id_utente" style="display: none;">
+          <div class="row">
+
+            <div class="col">
+              <label for="voto">{{schedaDTO.risposta1}}</label>
+              <input type="radio" name="voto" [(ngModel)]="utenteVtoinsert.voto" value="1"> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="voto">{{schedaDTO.risposta2}}</label>
+              <input type="radio" name="voto" [(ngModel)]="utenteVtoinsert.voto" value="2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="voto">{{schedaDTO.risposta3}}</label>
+              <input type="radio" name="voto" [(ngModel)]="utenteVtoinsert.voto" value="3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button type="submit" class="btn btn-primary">invia</button>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+    </div>  
+
+  </div>
+</div>
 
