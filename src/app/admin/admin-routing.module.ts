@@ -5,6 +5,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { VotantiListaComponent } from './votanti-lista/votanti-lista.component'
+import { SchedeComponent } from './schede/schede.component';
+import { SchedaLetturaComponent } from './schede/scheda-lettura/scheda-lettura.component';
+import { SchedaStatisticaComponent } from './schede/scheda-statistica/scheda-statistica.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -23,7 +26,10 @@ const routes: Routes = [
     { path: '', component: AdminDashboardComponent},
     { path: 'users', component: UsersComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent},
-    { path: 'votanti-lista', component: VotantiListaComponent}
+    { path: 'votanti-lista', component: VotantiListaComponent},
+    { path: 'schede', component: SchedeComponent},
+    { path: 'schede/scheda-lettura', component: SchedaLetturaComponent},
+    { path: 'schede/scheda-statistica', component: SchedaStatisticaComponent}
   ]}
 ];
 

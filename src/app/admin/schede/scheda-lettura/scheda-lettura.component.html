@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="form">
+    <div class="row mt-5">
+      <input [(ngModel)]="schedatoupdate.titolo" value="{{ schedatoupdate.titolo }}">
+    </div>
+    <div class="row mt-5">
+      <input [(ngModel)]="schedatoupdate.domanda" value="{{ schedatoupdate.domanda }}">
+    </div>
+    <div class="row mt-5">
+      <input [(ngModel)]="schedatoupdate.risposta1" value="{{ schedatoupdate.risposta1 }}">
+    </div>
+    <div class="row mt-5">
+      <input [(ngModel)]="schedatoupdate.risposta2" value="{{ schedatoupdate.risposta2 }}">
+    </div>
+    <div class="row mt-5">
+      <input [(ngModel)]="schedatoupdate.risposta3" value="{{ schedatoupdate.risposta3 }}">
+    </div>
+    <div class="row mt-5">
+      <button class="btn btn-primary" (click)="update(schedatoupdate)">UPDATE</button>
+    </div>
+  </div>
+
+</div>

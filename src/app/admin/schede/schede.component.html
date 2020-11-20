@@ -1,3 +1,101 @@
-<p>
-  schede works!
-</p>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><h3>TITOLO</h3></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sch of schedeList">
+            <td>
+              <a [routerLink]="['/admin-dashboard/schede/scheda-lettura',{id: sch.id }]">{{ sch.titolo }}</a>
+              
+            </td>
+            <td>
+              <button (click)="delete(sch)">Delete</button>
+            </td>
+            <td>
+              <button class="btn btn-dark">
+              <a [routerLink]="['/admin-dashboard/schede/scheda-statistica', {id: sch.id }]">STAT</a>  
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>
+          Titolo
+        </th>
+        <th>
+          Domanda
+        </th>
+        <th>
+          Risposta1
+        </th>
+        <th>
+          Risposta2
+        </th>
+        <th>
+          Risposta3
+        </th>
+        <th>
+          Edit
+        </th>
+        <th>             
+        </th>
+        <th>        
+        </th>
+       
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <input placeholder="titolo" [(ngModel)]="schedatoinsert.titolo">
+        </td>
+        <td>
+          <input placeholder="domanda" [(ngModel)]="schedatoinsert.domanda">
+        </td>
+        <td>
+          <input placeholder="risposta1" [(ngModel)]="schedatoinsert.risposta1">
+        </td>
+        <td>
+          <input placeholder="risposta2" [(ngModel)]="schedatoinsert.risposta2">
+        </td>
+        <td>
+          <input placeholder="risposta3" [(ngModel)]="schedatoinsert.risposta3">
+        </td>
+        <td>
+          <button (click)="insert(schedatoinsert)">Insert</button>
+        </td>
+        <td>
+          <button (click)="clear()">Clear</button>
+        </td>       
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

@@ -7,6 +7,8 @@ import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { SchedeComponent } from './schede/schede.component';
 import { VotantiListaComponent } from './votanti-lista/votanti-lista.component';
+import { SchedaLetturaComponent } from './schede/scheda-lettura/scheda-lettura.component';
+import { SchedaStatisticaComponent } from './schede/scheda-statistica/scheda-statistica.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -17,7 +19,7 @@ import { VotantiListaComponent } from './votanti-lista/votanti-lista.component';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, SchedeComponent, VotantiListaComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, SchedeComponent, VotantiListaComponent, SchedaLetturaComponent, SchedaStatisticaComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

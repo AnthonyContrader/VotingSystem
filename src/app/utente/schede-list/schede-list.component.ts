@@ -3,7 +3,7 @@ import { schedavotazioneDTO } from '../../../dto/schedavotazionedto';
 import { SchedaService } from '../../../service/scheda.service'
 import { UtenteVotanteService } from '../../../service/utente-votante.service';
 import { UserDTO } from '../../../dto/userdto';
-import { isNull } from 'util';
+
 
 @Component({
   selector: 'app-schede-list',
