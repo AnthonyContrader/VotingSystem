@@ -1,53 +1,50 @@
 
 #header{
-    background-color: darkorange;
+    background-color: orangered;
 }
-.searchContainer {
-    margin-top: 10px;
-    display: inline-block;
-    width:100%;
-    height: auto;
-    padding: auto;
-    margin-left:10px;
-    border: 0;
-    border-radius: 21px;
-    overflow: hidden;
-  background-color: white;
-  }
-  
-  
-  .searchIcon {
-    padding: 0.5rem;
-    z-index:2;
-    background-color: white;
-  }
-  
-  .searchBox {
-    border: 0;
-    padding: 0.5rem;
-    background-color: white;
-    font-size: 12px;
-  }
-  
-  .searchButton {
-      height: 70%;
-      margin-top:7px;
-    background: white;
-    border: 2px solid darkorange;
-    color: darkorange;
-    border-radius: 15px;
-  
-  }
-  
-  p{
-      font-size: 19px;
-      color: #f1f1f1;
-      margin-left: 0px;
-      padding-left: 5px;
-      padding-top: 12px;
-      height: inherit;
-      width: 100%;
-      background-color: #1e282d !important;
+
+.mydiv{
+  position: relative;
+}
+
+.center{
+  width: 80%;
+  height: 90%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image{
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.text{
+  float: right;
+  width: 50%;
+  height: 100%;
+  font-size: 19px;
+  color: #f1f1f1;
+}
+
+.clear{
+  display: none;
+  clear: both;
+}
+
+p{
+   font-size: 19px;
+   color: #f1f1f1;
+   margin-left: 0px;
+   padding-left: 5px;
+   padding-top: 12px;
+   height: inherit;
+   width: 100%;
+   background-color: #1e282d !important;
   }
   
   i:hover{

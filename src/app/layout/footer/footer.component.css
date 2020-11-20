@@ -1,5 +1,4 @@
 .menubtn{
-    width: 100%;
     text-align: left;
     background-color: #263238;
     color: #f1f1f1;
@@ -21,7 +20,7 @@ button:focus {
 
 button:hover, a:hover {
 background-color: #334247;
-color: darkorange;
+color: orangered;
 }
 
 *{
