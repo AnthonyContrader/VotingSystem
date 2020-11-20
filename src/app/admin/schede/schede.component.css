@@ -1,0 +1,25 @@
+.btn{
+    width: 100%;
+    
+}
+
+.button{
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.myScheda{
+    width: 100%;
+}
+
+.myCol{
+    padding: 0%;
+    width: 100%;
+}
+
+.table2{
+    padding: 10px;
+    box-shadow: 1px 1px 3px 3px #888888;
+
+}

@@ -1,21 +1,142 @@
+
 *{
     font-size: 18px;
 }
 
-.form{
-    width: 60vh;
-    height: 50vh;
+.myContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.center{
+    width: 70%;
+    height: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(218 , 218, 231);
+    box-shadow: 2px 2px 5px 5px rgb(191, 191, 213);
+}
+
+.headerForm{
+    width: 100%;
+    height: 40%;  
+    
+    
+}
+
+.title{
+    width: 100%;
+    height: 30%;
+    background-color: rgb(185, 185, 208);
+}
+
+.title h2{
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+}
+
+.title h2 span{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.question{
+    width: 90%;
+    height: 65%;
+    overflow: auto;
+    margin: 0 auto;
+    margin-top: 1%;
+    background-color: white;
+    
+
+}
+
+.answerForm{
+    width: 100%;
+    height: 60%;
+    position: relative;
+}
+
+.answerForm form{
+    width: 70%;
+    height: 80%;
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    vertical-align: middle;
 }
 
-form{
-    display: block;
-    width: 100vh;
-    height: 100vh;
 
+.rowbtn, .row1, .row2, .row3{
+    width: 100%;
+    height: 25%;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+.row1 label, .row2 label, .row3 label{
+    cursor: pointer;    
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    position: relative;
+}
+
+.row1 label:hover, .row2 label:hover, .row3 label:hover{
+    background: rgb(173, 173, 201);
+}
+
+.row1 input[type=radio]:checked + label, 
+.row2 input[type=radio]:checked + label, 
+.row3 input[type=radio]:checked + label {
+    background: rgb(173, 173, 201);
+}
+
+label span {
+    font-size: x-large;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.rowbtn{
+    position: relative;
+}
+
+.btnContainer{
+    width: 40%;
+    height: 80%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btnContainer button{
+    width:100%;
+}
+
+
+h3{
+    margin: 0;
+    padding: 0;
 }

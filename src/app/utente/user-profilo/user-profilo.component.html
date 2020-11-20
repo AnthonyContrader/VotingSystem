@@ -1,21 +1,25 @@
-<div class="container" >
+<div class="myContainer" >
     <!-- form Username e password -->
-    <div class="row">
-      <div class="col">
+    <div class="rowContainer">
+      <div class="formContainer">
         <form (ngSubmit)="submit(usertoupdate)">
-          <div class="row">
-            <div class="col">
-              <input type="text" [(ngModel)]="usertoupdate.username" name="username" placeholder="{{usertoupdate.username}}">
+          <div class="row0"><span>DATI UTENTE</span></div>
+          <div class="row1">
+            
+            <div class="userUpdate">
+              <label for="nome">Nome Utente</label>
+              <input type="text" id="nome" class="form-control" [(ngModel)]="usertoupdate.username" name="username" placeholder="{{usertoupdate.username}}">
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <input type="text" [(ngModel)]="usertoupdate.password" name="password" placeholder="{{usertoupdate.password}}"> 
+          <div class="row2">
+            <div class="pwdUpdate">
+              <label for="pwd">Password</label>
+              <input type="text" id="pwd" class="form-control" [(ngModel)]="usertoupdate.password" name="password" placeholder="{{usertoupdate.password}}"> 
             </div>
           </div>        
-          <div class="row">
-            <div class="col">
-              <button type="submit" class="btn btn-primary">invia</button>
+          <div class="row3">
+            <div class="rowbtn">
+              <button type="submit" class="btn btn-primary">AGGIORNA</button>
             </div>
           </div>         
         </form>

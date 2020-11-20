@@ -1,10 +1,66 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-md-1">
+  
+  <div class="row mt-5"></div>
 
-    </div>
-    <div class="col-md-10">
-      <table class="table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Titolo</th>
+        <th>Domanda</th>
+        <th>Risposta1</th>
+        <th>Risposta2</th>
+        <th>Risposta3</th>
+        <th>Edit</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input placeholder="titolo" [(ngModel)]="schedatoinsert.titolo" />
+        </td>
+        <td>
+          <input placeholder="domanda" [(ngModel)]="schedatoinsert.domanda" />
+        </td>
+        <td>
+          <input
+            placeholder="risposta1"
+            [(ngModel)]="schedatoinsert.risposta1"
+          />
+        </td>
+        <td>
+          <input
+            placeholder="risposta2"
+            [(ngModel)]="schedatoinsert.risposta2"
+          />
+        </td>
+        <td>
+          <input
+            placeholder="risposta3"
+            [(ngModel)]="schedatoinsert.risposta3"
+          />
+        </td>
+        <td>
+          <button class="bt2 btn btn-primary" (click)="insert(schedatoinsert)">Insert</button>
+        </td>
+        <td>
+          <button class="bt2 btn btn-danger" (click)="clear()">Clear</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="col-md-1"></div>
+
+  <div class="col-md-10">
+  
+    <div class="row mt-5"></div>
+
+  
+  <div class="row mt-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <table class="table table2">
         <thead>
           <tr>
             <th><h3>TITOLO</h3></th>
@@ -15,87 +71,42 @@
         <tbody>
           <tr *ngFor="let sch of schedeList">
             <td>
-              <a [routerLink]="['/admin-dashboard/schede/scheda-lettura',{id: sch.id }]">{{ sch.titolo }}</a>
-              
+              <button
+                class="button btn btn-light"
+                [routerLink]="[
+                  '/admin-dashboard/schede/scheda-lettura',
+                  { id: sch.id }
+                ]"
+              >
+                {{ sch.titolo }}
+              </button>
+            </td>
+
+            <td>
+              <button class="bt2 btn btn-danger" (click)="delete(sch)">
+                Delete
+              </button>
             </td>
             <td>
-              <button (click)="delete(sch)">Delete</button>
-            </td>
-            <td>
-              <button class="btn btn-dark">
-              <a [routerLink]="['/admin-dashboard/schede/scheda-statistica', {id: sch.id }]">STAT</a>  
+              <button
+                class=" btn btn-dark"
+                [routerLink]="[
+                  '/admin-dashboard/schede/scheda-statistica',
+                  { id: sch.id }
+                ]"
+              >
+                STAT
               </button>
             </td>
           </tr>
         </tbody>
-        </table>
+      </table>
     </div>
-    <div class="col-md-1">
-
-    </div>
+    <div class="col-md-3"></div>
   </div>
-  <div class="row mt-5">
-    <div class="col-md-1">
-
-    </div>
-    <div class="col-md-10">
-    <table class="table">
-      <thead>
-      <tr>
-        <th>
-          Titolo
-        </th>
-        <th>
-          Domanda
-        </th>
-        <th>
-          Risposta1
-        </th>
-        <th>
-          Risposta2
-        </th>
-        <th>
-          Risposta3
-        </th>
-        <th>
-          Edit
-        </th>
-        <th>             
-        </th>
-        <th>        
-        </th>
-       
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>
-          <input placeholder="titolo" [(ngModel)]="schedatoinsert.titolo">
-        </td>
-        <td>
-          <input placeholder="domanda" [(ngModel)]="schedatoinsert.domanda">
-        </td>
-        <td>
-          <input placeholder="risposta1" [(ngModel)]="schedatoinsert.risposta1">
-        </td>
-        <td>
-          <input placeholder="risposta2" [(ngModel)]="schedatoinsert.risposta2">
-        </td>
-        <td>
-          <input placeholder="risposta3" [(ngModel)]="schedatoinsert.risposta3">
-        </td>
-        <td>
-          <button (click)="insert(schedatoinsert)">Insert</button>
-        </td>
-        <td>
-          <button (click)="clear()">Clear</button>
-        </td>       
-      </tr>
-      </tbody>
-    </table>
-    </div>
-    <div class="col-md-1">
-
-    </div>
   </div>
+
+  <div class="col-md-1"></div>
+  
+
 </div>

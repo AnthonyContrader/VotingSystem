@@ -1,0 +1,93 @@
+
+.myContainer{
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+.rowContainer{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.formContainer{
+    width: 45%;
+    height: 35%;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:  rgb(218, 218, 231);
+    box-shadow: 2px 2px 5px 5px rgb(202, 202, 221);
+
+}
+
+
+.formContainer form{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.row0{
+    position: relative;
+    width: 100%;
+    height: 15%;
+    color: white;
+    font-weight: bold;
+}
+
+.row0 span{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row, .row2, .row3{
+    height: 25%;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.row3{
+    position: relative;
+}
+
+
+.userUpdate label,
+.pwdUpdate label{
+    width: 90%;
+    text-align: right;
+    margin: 0 auto;
+}
+
+.userUpdate input,
+.pwdUpdate input{
+    font-size: 14px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.rowbtn{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.rowbtn button{
+    width: 100%;
+    height: 100%;
+    font-size: 14px
+}
+

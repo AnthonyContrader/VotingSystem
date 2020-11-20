@@ -1,22 +1,42 @@
 <div class="container">
   <div class="form">
+   
     <div class="row mt-5">
-      <input [(ngModel)]="schedatoupdate.titolo" value="{{ schedatoupdate.titolo }}">
+      <div class="contenuto">
+      <label for="titolo">Titolo</label>
+      <input name="titolo" [(ngModel)]="schedatoupdate.titolo" value="{{ schedatoupdate.titolo }}">
+      </div>
     </div>
     <div class="row mt-5">
+      <div class="contenuto">
+      <label for="domanda">Domanda</label>
       <input [(ngModel)]="schedatoupdate.domanda" value="{{ schedatoupdate.domanda }}">
     </div>
-    <div class="row mt-5">
-      <input [(ngModel)]="schedatoupdate.risposta1" value="{{ schedatoupdate.risposta1 }}">
     </div>
     <div class="row mt-5">
-      <input [(ngModel)]="schedatoupdate.risposta2" value="{{ schedatoupdate.risposta2 }}">
+      <div class="contenuto">
+      <label for="risposta1">Risposta1</label>
+      <input name="risposta1" [(ngModel)]="schedatoupdate.risposta1" value="{{ schedatoupdate.risposta1 }}">
+    </div>
     </div>
     <div class="row mt-5">
-      <input [(ngModel)]="schedatoupdate.risposta3" value="{{ schedatoupdate.risposta3 }}">
+      <div class="contenuto">
+      <label for="risposta2">Risposta2</label>
+      <input  name="risposta2" [(ngModel)]="schedatoupdate.risposta2" value="{{ schedatoupdate.risposta2 }}">
+    </div>
     </div>
     <div class="row mt-5">
-      <button class="btn btn-primary" (click)="update(schedatoupdate)">UPDATE</button>
+      <div class="contenuto">
+      <label for="risposta3">Risposta3</label>
+      <input  name="risposta3" [(ngModel)]="schedatoupdate.risposta3" value="{{ schedatoupdate.risposta3 }}">
+    </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="contenuto">
+      <div class="dimButton">
+      <button class="button btn btn-primary" (click)="update(schedatoupdate)">UPDATE</button>
+    </div>
     </div>
   </div>
 

@@ -1,20 +1,28 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-7">
-      <img src="../../assets/logo.svg" alt="logo">
-    </div>
-    <div class="col-md-5">
-      <form #f="ngForm">
-        <p>Please insert username and password to Login or Sign Up</p>
-        <div class="form-group">
+
+<div class="container" style="background-color: ghostwhite;">  
+  <div class="formContainer">
+    <form #f="ngForm">
+      <div class="title">
+        <span>LOGIN</span>
+      </div>
+      <div class="inputContainer">
+        
+        <div class="userInput">
           <input class="form-control" type="text" id="user" name="username" placeholder="Username" ngModel>
         </div>
-        <div class="form-group">
+        <div class="passInput">
           <input class="form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
         </div>
-        <button type="submit" (click)="login(f)">Login</button>
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+      </div>
+      <div class="buttonContainer">
+        <div class="btn1">
+          <button type="submit" (click)="login(f)" class="btn btn-primary">Login</button>
+        </div>
+        <div class="btn2">
+          <button type="submit" class="btn btn-secondary">Sign Up</button>
+        </div>
+      </div>
+    </form>
   </div>
+
 </div>
