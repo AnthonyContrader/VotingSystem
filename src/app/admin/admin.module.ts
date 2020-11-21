@@ -9,6 +9,7 @@ import { SchedeComponent } from './schede/schede.component';
 import { VotantiListaComponent } from './votanti-lista/votanti-lista.component';
 import { SchedaLetturaComponent } from './schede/scheda-lettura/scheda-lettura.component';
 import { SchedaStatisticaComponent } from './schede/scheda-statistica/scheda-statistica.component';
+import { FilteridPipe } from '../filterid.pipe';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -19,11 +20,20 @@ import { SchedaStatisticaComponent } from './schede/scheda-statistica/scheda-sta
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, SchedeComponent, VotantiListaComponent, SchedaLetturaComponent, SchedaStatisticaComponent],
+  declarations: [AdminDashboardComponent, 
+    UsersComponent, 
+    WorkInProgressComponent, 
+    SchedeComponent, 
+    VotantiListaComponent, 
+    SchedaLetturaComponent, 
+    SchedaStatisticaComponent, 
+    FilteridPipe],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule
-  ]
+   
+  ],
+  exports:[FilteridPipe]
 })
 export class AdminModule { }

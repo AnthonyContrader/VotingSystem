@@ -9,10 +9,12 @@ import { LayoutModule } from './layout/layout.module';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './utente/user/user.module';
 import { SchedeListComponent } from './utente/schede-list/schede-list.component';
-import { SchedaComponent } from './scheda/scheda.component';
 import { UtenteVotanteComponent } from './utente-votante/utente-votante.component';
 import { VotazioneComponent } from './utente/votazione/votazione.component';
 import { UserProfiloComponent } from './utente/user-profilo/user-profilo.component';
+
+
+
 
 /** 
  * Modulo principale dell'applicazione. Qui vengono importati i moduli secondari. L'UNICA component
@@ -25,11 +27,10 @@ import { UserProfiloComponent } from './utente/user-profilo/user-profilo.compone
   declarations: [
     AppComponent,
     SchedeListComponent,
-    SchedaComponent,
+  
     UtenteVotanteComponent,
     VotazioneComponent,
-    UserProfiloComponent,
-    
+    UserProfiloComponent   
   ],
   imports: [
     BrowserModule,
@@ -39,9 +40,10 @@ import { UserProfiloComponent } from './utente/user-profilo/user-profilo.compone
     LayoutModule,
     AdminModule,
     UserModule,
-    FormsModule
+    FormsModule    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }

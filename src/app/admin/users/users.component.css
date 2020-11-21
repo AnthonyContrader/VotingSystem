@@ -2,35 +2,6 @@
     text-align: center;
 }
 
-/*Tables*/
-table {
-	border-collapse: collapse;
-	width: 100%;
-	float: left;
-	border-radius: 4px;
-	-moz-border-radius: 4px;
-}
-
-th, td {
-	text-align: center;
-	padding: 2px;
-}
-
-td{
-    font-size: 16px;
-}
-
-
-tr:nth-child(2n+1) {
-	background-color: #ffdb99;
-}
-
-th {
-	background-color: darkorange;
-	color: #ffffff;
-	font-size: 18px;
-
-}
 
 a:hover {
 	color: #999999;
@@ -53,4 +24,8 @@ input:hover,  input:active, input:focus{
 
 .insert{
 	background: rgb(231, 231, 231);
+}
+
+.tabInsert table{
+	box-shadow: 1px 1px 10px 2px #888888;
 }

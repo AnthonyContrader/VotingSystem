@@ -7,7 +7,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(226, 226, 235);
-    box-shadow: 2px 2px 2px 2px rgb(194, 194, 216);
+    box-shadow: 3px 2px 20px 2px rgb(182, 182, 202);
     border-radius: 15px;
 }
 

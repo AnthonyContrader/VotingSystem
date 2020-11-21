@@ -1,8 +1,11 @@
 <div class="myContainer">
   <div class="searchBar">
-    <input class="form-control" type="text"placeholder="Inserire id utente"/>
+    
+    <input class="form-control" id="cerca" type="text"placeholder="Inserire id utente"
+    [(ngModel)]="searchId" autocomplete="off"/>
   </div>
   <div class="tab">
+    <h2>Lista degli utenti che hanno votato</h2>
     <table class="table">
         <thead>
           <tr>
@@ -12,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let userV of listaUserV">
+          <tr *ngFor="let userV of (listaUserV | filterid:searchId)">
             <td>
               {{ userV.id_utente }}
             </td>
