@@ -1,0 +1,82 @@
+@charset "ISO-8859-1";
+.navbar {
+	position: relative;
+
+}
+
+.navbar span {
+	float: right;
+	margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.header {
+	position: relative;
+}
+
+.header span {
+	margin: 0;
+  position: absolute;
+	top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+#logout {
+	display: block;
+	float: right;
+	position: relative;
+	height: 100%;
+	width: 10%;
+}
+
+#logout a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#logout a span {
+	display: block;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);	
+}
+
+.link {
+	display: block;
+	width: 100%;
+	height: 10%;
+	font-weight: bold;
+}
+
+.link a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	color: white;
+}
+
+.link a span{
+	display: block;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.link a:hover {
+	background-color: #00ccad;
+}

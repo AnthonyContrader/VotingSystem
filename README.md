@@ -1,1 +1,2 @@
-# VotingSystem
+# SAMPLE
+Sample Projects
