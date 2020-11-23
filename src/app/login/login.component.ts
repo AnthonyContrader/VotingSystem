@@ -18,6 +18,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  signUp() {
+    console.log("signUp");
+    this.router.navigate(['/sign-up']);
+  }
+
   login(f: NgForm): void {
     this.loginDTO = new LoginDTO(f.value.username, f.value.password);
 

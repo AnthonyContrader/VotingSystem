@@ -30,7 +30,7 @@ import { UserProfiloComponent } from './utente/user-profilo/user-profilo.compone
   
     UtenteVotanteComponent,
     VotazioneComponent,
-    UserProfiloComponent   
+    UserProfiloComponent,   
   ],
   imports: [
     BrowserModule,

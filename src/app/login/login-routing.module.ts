@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 import { LoginComponent } from './login.component';
 
 /**
@@ -12,7 +13,8 @@ import { LoginComponent } from './login.component';
  * @author Vittorio Valent
  */
 const routes: Routes = [
-  { path:'login', component: LoginComponent }
+  { path:'login', component: LoginComponent },
+  { path:'sign-up', component: SignUpComponent }
 ];
 
 @NgModule({
