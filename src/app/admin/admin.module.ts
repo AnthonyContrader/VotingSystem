@@ -20,14 +20,16 @@ import { FilteridPipe } from '../filterid.pipe';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, 
+  declarations: [
+    AdminDashboardComponent, 
     UsersComponent, 
     WorkInProgressComponent, 
     SchedeComponent, 
     VotantiListaComponent, 
     SchedaLetturaComponent, 
     SchedaStatisticaComponent, 
-    FilteridPipe],
+    FilteridPipe
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,

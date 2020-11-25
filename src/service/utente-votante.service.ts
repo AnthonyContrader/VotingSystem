@@ -30,4 +30,10 @@ export class UtenteVotanteService extends AbstractService<utentevotanteDTO> {
     ): Observable<any>{
       return this.http.get<any>('http://localhost:' + this.port + '/' + this.type + '/statistica?id_scheda=' + id_scheda);
     }
+
+    voti(
+      id_scheda: number
+    ): Observable<any>{
+      return this.http.get<any>('http://localhost:' + this.port + '/' + this.type + '/voti?id_scheda=' + id_scheda);
+    }
 }

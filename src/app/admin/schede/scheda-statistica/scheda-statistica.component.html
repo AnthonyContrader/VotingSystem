@@ -5,21 +5,24 @@
         <caption>Statistica voti scheda</caption>
         <thead>
           <tr>
-            <th><h3>% Risposta 1</h3></th>
-            <th><h3>% Risposta 2</h3></th>
+            <th [style.background-color]="predictVoto == 0 ? 'green': 'none'"><h3>% Risposta 1</h3></th>
+            <th [style.background-color]="predictVoto == 1 ? 'green': 'none'"><h3>% Risposta 2</h3></th>
             <th><h3>% Risposta 3</h3></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td> {{ris[0]}} </td>
-            <td> {{ris[1]}} </td>
+          <tr style="text-align: center;">
+            <td [style.background-color]="predictVoto == 0 ? 'green': 'none'"> {{ris[0]}} </td>
+            <td [style.background-color]="predictVoto == 1 ? 'green': 'none'"> {{ris[1]}} </td>
             <td> {{ris[2]}} </td>
           </tr>
         </tbody>
-
       </table>
+      <div class="row justify-content-md-center">
+        <button class="btn btn-dark" (click)="fnPredict()">previsione voto finale</button>
+      </div>
+      <div *ngIf="predictVoto == 2">Non è possibile fare una previsione</div>
     </div>
- 
+    
 
 </div>
