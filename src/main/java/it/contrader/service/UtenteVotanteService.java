@@ -15,17 +15,17 @@ public class UtenteVotanteService extends AbstractService<UtenteVotante, UtenteV
 	@Autowired
 	private UtenteVotanteConverter converter;
 	@Autowired
-	private UtenteVotanteRepository repository;
+	private UtenteVotanteRepository crudRepository;
 
 	public boolean checkUser(int id_scheda, int id_utente) {
-		return converter.checkUser(repository.findByIdutenteAndIdscheda(id_utente, id_scheda));
+		return converter.checkUser(crudRepository.findByIdutenteAndIdscheda(id_utente, id_scheda));
 	}
 	
 	public double[] getStatistica(int id_scheda) {
 		double[] ar = new double[3];
-		ar[0] = (double)repository.countVoto(id_scheda, 1);
-		ar[1] = (double)repository.countVoto(id_scheda, 2);
-		ar[2] = (double)repository.countVoto(id_scheda, 3);
+		ar[0] = (double)crudRepository.countVoto(id_scheda, 1);
+		ar[1] = (double)crudRepository.countVoto(id_scheda, 2);
+		ar[2] = (double)crudRepository.countVoto(id_scheda, 3);
 		return  ar;
 
 	}

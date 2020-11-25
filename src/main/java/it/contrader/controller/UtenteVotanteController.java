@@ -28,10 +28,12 @@ public class UtenteVotanteController extends AbstractController<UtenteVotanteDTO
 	
 	@GetMapping(value = "/control")
 	public SchedaVotazioneDTO control(@RequestParam("id_scheda") int id_scheda, @RequestParam("id_utente") int id_utente) {	
+
 		boolean check = service.checkUser(id_scheda, id_utente);
-		if(check) {
+		if(check == false) {
 			SchedaVotazioneDTO s = (SchedaVotazioneDTO) servicescheda.read(id_scheda);
 			return s;
+			
 			
 		}
 		return null;
@@ -46,6 +48,12 @@ public class UtenteVotanteController extends AbstractController<UtenteVotanteDTO
 		risultati[2] = (risultati[2]/totale)*100;
 		return risultati;
 		
+	}
+	
+	@GetMapping(value = "/voti")
+	public double[] voti(@RequestParam("id_scheda") int id_scheda) {
+		double[] voti = service.getStatistica(id_scheda);
+		return voti;
 	}
 
 }

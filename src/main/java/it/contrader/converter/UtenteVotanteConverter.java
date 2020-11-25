@@ -27,11 +27,14 @@ public class UtenteVotanteConverter extends AbstractConverter<UtenteVotante,Uten
 		return utentevDTO;
 	}
 
+	
 	public boolean checkUser(UtenteVotante utentev) {
+		
 		if(utentev != null) {
-			return false;
+			
+			return true;//utente ha già votato
 		}
-		return true;
+		return false;//utente deve ancora votare
 	}
 
 	@Override
