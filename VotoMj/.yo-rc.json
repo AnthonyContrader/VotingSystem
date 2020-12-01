@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.project.contrader.votomj"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "voto",
+    "packageName": "com.project.contrader.votomj",
+    "packageFolder": "com/project/contrader/votomj",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZjkzZGRmMjFkNmY1ZDI3OGE2NTBhZDk3YjI1YTVhY2MwMTI1NDFmM2M3MzE5NzVmMjZmNzE0NzM2ODEwZWM0YWM0YmRmMGMxN2QyYmQ0YmQwODcxODljMWNmOWNkZGNjZWEzYjRjYjY0NDM3YzYyNmRhOTczODJhOTE5NjQzODU=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1606833040956,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
