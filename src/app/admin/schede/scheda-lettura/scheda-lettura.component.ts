@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SchedaService } from '../../../../service/scheda.service';
-import { schedavotazioneDTO } from '../../../../dto/schedavotazioneDTO';
+import { schedavotazioneDTO } from '../../../../dto/schedavotazionedto';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
