@@ -105,22 +105,9 @@ server:
 # ===================================================================
 
 jhipster:
-  gateway:
-    rate-limiting:
-      enabled: false
-    authorized-microservices-endpoints: # Access Control Policy, if left empty for a route, all endpoints will be accessible
-      app1: /api # recommended prod configuration
   http:
     cache: # Used by the CachingHttpHeadersFilter
       timeToLiveInDays: 1461
-  cache: # Cache configuration
-    hazelcast: # Hazelcast distributed cache
-      time-to-live-seconds: 3600
-      backup-count: 1
-      management-center: # Full reference is available at: http://docs.hazelcast.org/docs/management-center/3.9/manual/html/Deploying_and_Starting.html
-        enabled: false
-        update-interval: 3
-        url:
   security:
     authentication:
       jwt:
@@ -129,7 +116,7 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: ZmUzNzY1OTEwMTg3YTdmOTA1ODc0NjU3YTQ2YTM0YWE4NmRmYzczZjQyNGU4MTc5ZTY2NTg1NjNmNGZhZjAwYWZhY2UwODQxM2NlZjgwZTlhYjU1NjRkMjIyNGZhYmNiNzRjOThjMzk4M2IxNjkzOWFkNTMxOGZhZTBkOTQwZjg=
+        base64-secret: ODgyYTM5OGY2MWM3MGVhOWEwYzE0OWI4ZGRhM2FlOThiYmY2YTZlYWIxOTdjMGRiZDE4Y2M1NTk4NWQxMmExZmZhNzg3MDM3YmFhZDllN2RiMmRiNjIwM2Y2N2JkYWE4YmM5NTc4ZDAwMWUxMDFiNjY3YmU2YjI5NDg2NjZhOWI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
