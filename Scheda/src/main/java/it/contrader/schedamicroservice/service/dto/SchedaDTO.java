@@ -15,15 +15,19 @@ public class SchedaDTO implements Serializable {
     private String domanda;
 
     @NotNull
-    @Size(min = 1, max = 100)
+    @Size(min = 2, max = 100)
     private String risposta1;
 
     @NotNull
-    @Size(min = 1, max = 100)
+    @Size(min = 2, max = 100)
     private String risposta2;
 
-    @Size(min = 1, max = 100)
+    @Size(min = 2, max = 100)
     private String risposta3;
+
+    @NotNull
+    @Size(min = 5, max = 250)
+    private String titolo;
 
     
     public Long getId() {
@@ -66,6 +70,14 @@ public class SchedaDTO implements Serializable {
         this.risposta3 = risposta3;
     }
 
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -92,6 +104,7 @@ public class SchedaDTO implements Serializable {
             ", risposta1='" + getRisposta1() + "'" +
             ", risposta2='" + getRisposta2() + "'" +
             ", risposta3='" + getRisposta3() + "'" +
+            ", titolo='" + getTitolo() + "'" +
             "}";
     }
 }

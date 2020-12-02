@@ -25,18 +25,23 @@ public class Scheda implements Serializable {
     private String domanda;
 
     @NotNull
-    @Size(min = 1, max = 100)
+    @Size(min = 2, max = 100)
     @Column(name = "risposta_1", length = 100, nullable = false)
     private String risposta1;
 
     @NotNull
-    @Size(min = 1, max = 100)
+    @Size(min = 2, max = 100)
     @Column(name = "risposta_2", length = 100, nullable = false)
     private String risposta2;
 
-    @Size(min = 1, max = 100)
+    @Size(min = 2, max = 100)
     @Column(name = "risposta_3", length = 100)
     private String risposta3;
+
+    @NotNull
+    @Size(min = 5, max = 250)
+    @Column(name = "titolo", length = 250, nullable = false)
+    private String titolo;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -98,6 +103,19 @@ public class Scheda implements Serializable {
     public void setRisposta3(String risposta3) {
         this.risposta3 = risposta3;
     }
+
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public Scheda titolo(String titolo) {
+        this.titolo = titolo;
+        return this;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -125,6 +143,7 @@ public class Scheda implements Serializable {
             ", risposta1='" + getRisposta1() + "'" +
             ", risposta2='" + getRisposta2() + "'" +
             ", risposta3='" + getRisposta3() + "'" +
+            ", titolo='" + getTitolo() + "'" +
             "}";
     }
 }

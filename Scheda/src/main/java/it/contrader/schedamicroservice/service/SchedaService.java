@@ -40,11 +40,4 @@ public interface SchedaService {
      * @param id the id of the entity.
      */
     void delete(Long id);
-
-    /**
-     * Check if "id" exists
-     *
-     * @param id the id of the entity
-     */
-    boolean exists(Long id);
 }

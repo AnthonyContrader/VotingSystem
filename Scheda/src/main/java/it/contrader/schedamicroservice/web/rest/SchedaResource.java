@@ -114,16 +114,4 @@ public class SchedaResource {
         schedaService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
-    /**
-     * {@code DELETE  /schedas/:id} : delete the "id" scheda.
-     *
-     * @param id the id of the schedaDTO to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
-    @RequestMapping(value="/schedas/{id}", method=RequestMethod.HEAD)
-    public ResponseEntity<Void> existsScheda(@PathVariable Long id) {
-        log.debug("Getting existance of Scheda : {}", id);
-        if(schedaService.exists(id)) return ResponseEntity.ok().build();
-        else return ResponseEntity.notFound().build();
-    }
 }

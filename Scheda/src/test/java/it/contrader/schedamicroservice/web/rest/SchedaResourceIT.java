@@ -44,6 +44,9 @@ public class SchedaResourceIT {
     private static final String DEFAULT_RISPOSTA_3 = "AAAAAAAAAA";
     private static final String UPDATED_RISPOSTA_3 = "BBBBBBBBBB";
 
+    private static final String DEFAULT_TITOLO = "AAAAAAAAAA";
+    private static final String UPDATED_TITOLO = "BBBBBBBBBB";
+
     @Autowired
     private SchedaRepository schedaRepository;
 
@@ -72,7 +75,8 @@ public class SchedaResourceIT {
             .domanda(DEFAULT_DOMANDA)
             .risposta1(DEFAULT_RISPOSTA_1)
             .risposta2(DEFAULT_RISPOSTA_2)
-            .risposta3(DEFAULT_RISPOSTA_3);
+            .risposta3(DEFAULT_RISPOSTA_3)
+            .titolo(DEFAULT_TITOLO);
         return scheda;
     }
     /**
@@ -86,7 +90,8 @@ public class SchedaResourceIT {
             .domanda(UPDATED_DOMANDA)
             .risposta1(UPDATED_RISPOSTA_1)
             .risposta2(UPDATED_RISPOSTA_2)
-            .risposta3(UPDATED_RISPOSTA_3);
+            .risposta3(UPDATED_RISPOSTA_3)
+            .titolo(UPDATED_TITOLO);
         return scheda;
     }
 
@@ -114,6 +119,7 @@ public class SchedaResourceIT {
         assertThat(testScheda.getRisposta1()).isEqualTo(DEFAULT_RISPOSTA_1);
         assertThat(testScheda.getRisposta2()).isEqualTo(DEFAULT_RISPOSTA_2);
         assertThat(testScheda.getRisposta3()).isEqualTo(DEFAULT_RISPOSTA_3);
+        assertThat(testScheda.getTitolo()).isEqualTo(DEFAULT_TITOLO);
     }
 
     @Test
@@ -199,6 +205,26 @@ public class SchedaResourceIT {
 
     @Test
     @Transactional
+    public void checkTitoloIsRequired() throws Exception {
+        int databaseSizeBeforeTest = schedaRepository.findAll().size();
+        // set the field null
+        scheda.setTitolo(null);
+
+        // Create the Scheda, which fails.
+        SchedaDTO schedaDTO = schedaMapper.toDto(scheda);
+
+
+        restSchedaMockMvc.perform(post("/api/schedas")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(schedaDTO)))
+            .andExpect(status().isBadRequest());
+
+        List<Scheda> schedaList = schedaRepository.findAll();
+        assertThat(schedaList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllSchedas() throws Exception {
         // Initialize the database
         schedaRepository.saveAndFlush(scheda);
@@ -211,7 +237,8 @@ public class SchedaResourceIT {
             .andExpect(jsonPath("$.[*].domanda").value(hasItem(DEFAULT_DOMANDA)))
             .andExpect(jsonPath("$.[*].risposta1").value(hasItem(DEFAULT_RISPOSTA_1)))
             .andExpect(jsonPath("$.[*].risposta2").value(hasItem(DEFAULT_RISPOSTA_2)))
-            .andExpect(jsonPath("$.[*].risposta3").value(hasItem(DEFAULT_RISPOSTA_3)));
+            .andExpect(jsonPath("$.[*].risposta3").value(hasItem(DEFAULT_RISPOSTA_3)))
+            .andExpect(jsonPath("$.[*].titolo").value(hasItem(DEFAULT_TITOLO)));
     }
     
     @Test
@@ -228,7 +255,8 @@ public class SchedaResourceIT {
             .andExpect(jsonPath("$.domanda").value(DEFAULT_DOMANDA))
             .andExpect(jsonPath("$.risposta1").value(DEFAULT_RISPOSTA_1))
             .andExpect(jsonPath("$.risposta2").value(DEFAULT_RISPOSTA_2))
-            .andExpect(jsonPath("$.risposta3").value(DEFAULT_RISPOSTA_3));
+            .andExpect(jsonPath("$.risposta3").value(DEFAULT_RISPOSTA_3))
+            .andExpect(jsonPath("$.titolo").value(DEFAULT_TITOLO));
     }
     @Test
     @Transactional
@@ -254,7 +282,8 @@ public class SchedaResourceIT {
             .domanda(UPDATED_DOMANDA)
             .risposta1(UPDATED_RISPOSTA_1)
             .risposta2(UPDATED_RISPOSTA_2)
-            .risposta3(UPDATED_RISPOSTA_3);
+            .risposta3(UPDATED_RISPOSTA_3)
+            .titolo(UPDATED_TITOLO);
         SchedaDTO schedaDTO = schedaMapper.toDto(updatedScheda);
 
         restSchedaMockMvc.perform(put("/api/schedas")
@@ -270,6 +299,7 @@ public class SchedaResourceIT {
         assertThat(testScheda.getRisposta1()).isEqualTo(UPDATED_RISPOSTA_1);
         assertThat(testScheda.getRisposta2()).isEqualTo(UPDATED_RISPOSTA_2);
         assertThat(testScheda.getRisposta3()).isEqualTo(UPDATED_RISPOSTA_3);
+        assertThat(testScheda.getTitolo()).isEqualTo(UPDATED_TITOLO);
     }
 
     @Test
