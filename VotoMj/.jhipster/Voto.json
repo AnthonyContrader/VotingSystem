@@ -1,22 +1,25 @@
 {
   "fluentMethods": true,
-  "clientRootFolder": "voto",
+  "clientRootFolder": "Voto",
   "relationships": [],
   "fields": [
     {
-      "fieldName": "idUtente",
-      "fieldType": "Long"
+      "fieldName": "utente",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
     },
     {
-      "fieldName": "idScheda",
-      "fieldType": "Long"
+      "fieldName": "scheda",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "voto",
-      "fieldType": "Long"
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
     }
   ],
-  "changelogDate": "20201201145309",
+  "changelogDate": "20201202161755",
   "dto": "mapstruct",
   "searchEngine": false,
   "service": "serviceImpl",
@@ -25,8 +28,5 @@
   "readOnly": false,
   "jpaMetamodelFiltering": false,
   "pagination": "pagination",
-  "microserviceName": "voto",
-  "name": "Voto",
-  "embedded": false,
-  "applications": "*"
+  "microserviceName": "Voto"
 }

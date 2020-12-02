@@ -80,7 +80,7 @@ management:
 
 spring:
   application:
-    name: voto
+    name: Voto
   cloud:
     consul:
       discovery:
@@ -166,11 +166,11 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: voto@localhost
+    from: Voto@localhost
   swagger:
     default-include-pattern: /api/.*
-    title: voto API
-    description: voto API documentation
+    title: Voto API
+    description: Voto API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

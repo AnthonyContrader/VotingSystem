@@ -1,13 +1,13 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.project.contrader.votomj"
+      "packageName": "com.contrader"
     },
     "jhipsterVersion": "6.10.5",
     "applicationType": "microservice",
-    "baseName": "voto",
-    "packageName": "com.project.contrader.votomj",
-    "packageFolder": "com/project/contrader/votomj",
+    "baseName": "Voto",
+    "packageName": "com.contrader",
+    "packageFolder": "com/contrader",
     "serverPort": "8081",
     "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
@@ -21,9 +21,9 @@
     "serviceDiscoveryType": "consul",
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "ZjkzZGRmMjFkNmY1ZDI3OGE2NTBhZDk3YjI1YTVhY2MwMTI1NDFmM2M3MzE5NzVmMjZmNzE0NzM2ODEwZWM0YWM0YmRmMGMxN2QyYmQ0YmQwODcxODljMWNmOWNkZGNjZWEzYjRjYjY0NDM3YzYyNmRhOTczODJhOTE5NjQzODU=",
+    "jwtSecretKey": "NTBkYmIyYjJkYmZiOGUzYTcyZmIzNDFjZDgxYjEyZGFjZTExMDJkMDY0N2I2OTEzZDYxZjI1NmU4NDlmYTE3MDFjODk5ZTA3YjJkODkyMzFmNDVmZDNjMDQ3NTE1MjE0YTc3YjY5MWRjNWE2MjhlMThlZDg5ODcyNDJhODJlZjc=",
     "embeddableLaunchScript": false,
-    "creationTimestamp": 1606833040956,
+    "creationTimestamp": 1606925718464,
     "testFrameworks": [],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
@@ -34,6 +34,6 @@
     "blueprints": [],
     "skipClient": true,
     "skipUserManagement": true,
-    "lastLiquibaseTimestamp": 1606834389000
+    "lastLiquibaseTimestamp": 1606925875000
   }
 }

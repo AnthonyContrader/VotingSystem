@@ -18,10 +18,10 @@ spring:
     # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
     #active: testcontainers
   application:
-    name: voto
+    name: Voto
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:voto;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:Voto;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -94,7 +94,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: ZjkzZGRmMjFkNmY1ZDI3OGE2NTBhZDk3YjI1YTVhY2MwMTI1NDFmM2M3MzE5NzVmMjZmNzE0NzM2ODEwZWM0YWM0YmRmMGMxN2QyYmQ0YmQwODcxODljMWNmOWNkZGNjZWEzYjRjYjY0NDM3YzYyNmRhOTczODJhOTE5NjQzODU=
+        base64-secret: NTBkYmIyYjJkYmZiOGUzYTcyZmIzNDFjZDgxYjEyZGFjZTExMDJkMDY0N2I2OTEzZDYxZjI1NmU4NDlmYTE3MDFjODk5ZTA3YjJkODkyMzFmNDVmZDNjMDQ3NTE1MjE0YTc3YjY5MWRjNWE2MjhlMThlZDg5ODcyNDJhODJlZjc=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:
