@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.contrader"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "Questionario",
+    "packageName": "com.contrader",
+    "packageFolder": "com/contrader",
+    "serverPort": "8082",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MjZjMjJiOTk1N2JhMjA2NTc2NzU5NTNiNzhlMGEzZWJkOTUwOTRmYjhhZTE5MmQ3OGE5MDdlY2NjYmZlNmE0NDliYzcxNTljMjA1NzQ1YmMyODVkMTFjZjk0ZTFkODg1NjIxMmQwMTNhN2VkZTU3MGVlMWQ2ZmYyNGJhYmEzYTg=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1606929819004,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "reactive": true,
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
