@@ -1,0 +1,30 @@
+{
+  "name": "Domande",
+  "fields": [
+    {
+      "fieldName": "testo",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "questionario",
+      "otherEntityRelationshipName": "domande",
+      "relationshipName": "questionario",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201202175906",
+  "entityTableName": "domande",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "Questionario",
+  "applications": "*",
+  "microserviceName": "Questionario"
+}

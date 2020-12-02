@@ -1,0 +1,33 @@
+{
+  "name": "Questionario",
+  "fields": [
+    {
+      "fieldName": "indexGrade",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "commenti",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "domande",
+      "otherEntityRelationshipName": "questionario",
+      "relationshipName": "domande"
+    }
+  ],
+  "changelogDate": "20201202175806",
+  "entityTableName": "questionario",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "Questionario",
+  "applications": "*",
+  "microserviceName": "Questionario"
+}
