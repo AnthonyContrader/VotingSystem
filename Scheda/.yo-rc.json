@@ -34,6 +34,9 @@
     "blueprints": [],
     "skipClient": true,
     "skipUserManagement": true,
-    "lastLiquibaseTimestamp": 1606858616000
-  }
+    "lastLiquibaseTimestamp": 1606858616000,
+    "languages": ["en", "fr"],
+    "nativeLanguage": "en"
+  },
+  "entities": ["Scheda"]
 }

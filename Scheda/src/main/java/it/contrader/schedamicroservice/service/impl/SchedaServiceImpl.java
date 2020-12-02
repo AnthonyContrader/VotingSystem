@@ -65,14 +65,4 @@ public class SchedaServiceImpl implements SchedaService {
         log.debug("Request to delete Scheda : {}", id);
         schedaRepository.deleteById(id);
     }
-     /**
-    * Check if "id" exists
-    *
-    * @param id the id of the entity
-    */
-    @Override
-    public boolean exists(Long id){
-        log.debug("Check if Scheda exists : {}", id);
-        return schedaRepository.existsById(id);
-    }
 }
