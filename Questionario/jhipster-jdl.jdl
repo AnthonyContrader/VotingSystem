@@ -1,15 +1,20 @@
-
-
-
 entity Questionario {
-	 
      indexGrade Integer,
-     commenti String
-     
+     commenti String     
 } 
 
 entity Domande{
-	testo String    
+	testo String,
+    risposta String
+}
+
+entity RisposteQuestionario{
+	idUtente Long,
+    testo String
+}
+
+relationship OneToMany{
+	Domande{RisposteQuestionario} to RisposteQuestionario
 }
 
 relationship OneToMany{

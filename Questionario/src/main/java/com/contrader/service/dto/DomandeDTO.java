@@ -11,6 +11,8 @@ public class DomandeDTO implements Serializable {
 
     private String testo;
 
+    private String risposta;
+
 
     private Long questionarioId;
     
@@ -28,6 +30,14 @@ public class DomandeDTO implements Serializable {
 
     public void setTesto(String testo) {
         this.testo = testo;
+    }
+
+    public String getRisposta() {
+        return risposta;
+    }
+
+    public void setRisposta(String risposta) {
+        this.risposta = risposta;
     }
 
     public Long getQuestionarioId() {
@@ -61,6 +71,7 @@ public class DomandeDTO implements Serializable {
         return "DomandeDTO{" +
             "id=" + getId() +
             ", testo='" + getTesto() + "'" +
+            ", risposta='" + getRisposta() + "'" +
             ", questionarioId=" + getQuestionarioId() +
             "}";
     }

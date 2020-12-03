@@ -15,6 +15,8 @@ public interface DomandeMapper extends EntityMapper<DomandeDTO, Domande> {
     @Mapping(source = "questionario.id", target = "questionarioId")
     DomandeDTO toDto(Domande domande);
 
+    @Mapping(target = "risposteQuestionarios", ignore = true)
+    @Mapping(target = "removeRisposteQuestionario", ignore = true)
     @Mapping(source = "questionarioId", target = "questionario")
     Domande toEntity(DomandeDTO domandeDTO);
 

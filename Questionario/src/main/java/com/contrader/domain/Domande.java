@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Domande.
@@ -21,6 +23,12 @@ public class Domande implements Serializable {
 
     @Column(name = "testo")
     private String testo;
+
+    @Column(name = "risposta")
+    private String risposta;
+
+    @OneToMany(mappedBy = "domande")
+    private Set<RisposteQuestionario> risposteQuestionarios = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties(value = "domandes", allowSetters = true)
@@ -46,6 +54,44 @@ public class Domande implements Serializable {
 
     public void setTesto(String testo) {
         this.testo = testo;
+    }
+
+    public String getRisposta() {
+        return risposta;
+    }
+
+    public Domande risposta(String risposta) {
+        this.risposta = risposta;
+        return this;
+    }
+
+    public void setRisposta(String risposta) {
+        this.risposta = risposta;
+    }
+
+    public Set<RisposteQuestionario> getRisposteQuestionarios() {
+        return risposteQuestionarios;
+    }
+
+    public Domande risposteQuestionarios(Set<RisposteQuestionario> risposteQuestionarios) {
+        this.risposteQuestionarios = risposteQuestionarios;
+        return this;
+    }
+
+    public Domande addRisposteQuestionario(RisposteQuestionario risposteQuestionario) {
+        this.risposteQuestionarios.add(risposteQuestionario);
+        risposteQuestionario.setDomande(this);
+        return this;
+    }
+
+    public Domande removeRisposteQuestionario(RisposteQuestionario risposteQuestionario) {
+        this.risposteQuestionarios.remove(risposteQuestionario);
+        risposteQuestionario.setDomande(null);
+        return this;
+    }
+
+    public void setRisposteQuestionarios(Set<RisposteQuestionario> risposteQuestionarios) {
+        this.risposteQuestionarios = risposteQuestionarios;
     }
 
     public Questionario getQuestionario() {
@@ -84,6 +130,7 @@ public class Domande implements Serializable {
         return "Domande{" +
             "id=" + getId() +
             ", testo='" + getTesto() + "'" +
+            ", risposta='" + getRisposta() + "'" +
             "}";
     }
 }

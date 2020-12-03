@@ -4,9 +4,19 @@
     {
       "fieldName": "testo",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "risposta",
+      "fieldType": "String"
     }
   ],
   "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "risposteQuestionario",
+      "otherEntityRelationshipName": "domande",
+      "relationshipName": "risposteQuestionario"
+    },
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "questionario",
