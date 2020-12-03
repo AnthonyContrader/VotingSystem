@@ -4,8 +4,8 @@ entity Questionario {
 } 
 
 entity Domande{
-	testo String,
-    risposta String
+	testo String
+    
 }
 
 entity RisposteQuestionario{

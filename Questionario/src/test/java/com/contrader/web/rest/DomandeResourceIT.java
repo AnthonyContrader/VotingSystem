@@ -35,9 +35,6 @@ public class DomandeResourceIT {
     private static final String DEFAULT_TESTO = "AAAAAAAAAA";
     private static final String UPDATED_TESTO = "BBBBBBBBBB";
 
-    private static final String DEFAULT_RISPOSTA = "AAAAAAAAAA";
-    private static final String UPDATED_RISPOSTA = "BBBBBBBBBB";
-
     @Autowired
     private DomandeRepository domandeRepository;
 
@@ -63,8 +60,7 @@ public class DomandeResourceIT {
      */
     public static Domande createEntity(EntityManager em) {
         Domande domande = new Domande()
-            .testo(DEFAULT_TESTO)
-            .risposta(DEFAULT_RISPOSTA);
+            .testo(DEFAULT_TESTO);
         return domande;
     }
     /**
@@ -75,8 +71,7 @@ public class DomandeResourceIT {
      */
     public static Domande createUpdatedEntity(EntityManager em) {
         Domande domande = new Domande()
-            .testo(UPDATED_TESTO)
-            .risposta(UPDATED_RISPOSTA);
+            .testo(UPDATED_TESTO);
         return domande;
     }
 
@@ -101,7 +96,6 @@ public class DomandeResourceIT {
         assertThat(domandeList).hasSize(databaseSizeBeforeCreate + 1);
         Domande testDomande = domandeList.get(domandeList.size() - 1);
         assertThat(testDomande.getTesto()).isEqualTo(DEFAULT_TESTO);
-        assertThat(testDomande.getRisposta()).isEqualTo(DEFAULT_RISPOSTA);
     }
 
     @Test
@@ -136,8 +130,7 @@ public class DomandeResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(domande.getId().intValue())))
-            .andExpect(jsonPath("$.[*].testo").value(hasItem(DEFAULT_TESTO)))
-            .andExpect(jsonPath("$.[*].risposta").value(hasItem(DEFAULT_RISPOSTA)));
+            .andExpect(jsonPath("$.[*].testo").value(hasItem(DEFAULT_TESTO)));
     }
     
     @Test
@@ -151,8 +144,7 @@ public class DomandeResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(domande.getId().intValue()))
-            .andExpect(jsonPath("$.testo").value(DEFAULT_TESTO))
-            .andExpect(jsonPath("$.risposta").value(DEFAULT_RISPOSTA));
+            .andExpect(jsonPath("$.testo").value(DEFAULT_TESTO));
     }
     @Test
     @Transactional
@@ -175,8 +167,7 @@ public class DomandeResourceIT {
         // Disconnect from session so that the updates on updatedDomande are not directly saved in db
         em.detach(updatedDomande);
         updatedDomande
-            .testo(UPDATED_TESTO)
-            .risposta(UPDATED_RISPOSTA);
+            .testo(UPDATED_TESTO);
         DomandeDTO domandeDTO = domandeMapper.toDto(updatedDomande);
 
         restDomandeMockMvc.perform(put("/api/domandes")
@@ -189,7 +180,6 @@ public class DomandeResourceIT {
         assertThat(domandeList).hasSize(databaseSizeBeforeUpdate);
         Domande testDomande = domandeList.get(domandeList.size() - 1);
         assertThat(testDomande.getTesto()).isEqualTo(UPDATED_TESTO);
-        assertThat(testDomande.getRisposta()).isEqualTo(UPDATED_RISPOSTA);
     }
 
     @Test

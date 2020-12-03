@@ -4,10 +4,6 @@
     {
       "fieldName": "testo",
       "fieldType": "String"
-    },
-    {
-      "fieldName": "risposta",
-      "fieldType": "String"
     }
   ],
   "relationships": [

@@ -1,6 +1,6 @@
 package com.contrader.web.rest;
 
-import com.contrader.service.QuestionarioService;
+import com.contrader.service.impl.QuestionarioServiceImpl;
 import com.contrader.web.rest.errors.BadRequestAlertException;
 import com.contrader.service.dto.QuestionarioDTO;
 
@@ -37,9 +37,9 @@ public class QuestionarioResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final QuestionarioService questionarioService;
+    private final QuestionarioServiceImpl questionarioService;
 
-    public QuestionarioResource(QuestionarioService questionarioService) {
+    public QuestionarioResource(QuestionarioServiceImpl questionarioService) {
         this.questionarioService = questionarioService;
     }
 
