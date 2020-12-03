@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.contrader"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "ServizioNotifica",
+    "packageName": "com.contrader",
+    "packageFolder": "com/contrader",
+    "serverPort": "8083",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZGVmMDkyYjFjOWQxNjQzOThiOThlMWVjZTNjZmE1ZDcxOTBhZmFkOWRiZjU1YjFlMjkzZDc0ZTQyYmEzNGFjNTQ5MzVjYjRiZDE3NTU2N2M2YzcxOGZlYzliZDA4NGVmYWVlOGNiYjlkNGQ3NzU3YTUwZjMxZDI1ZGFhMmRkZjE=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1606987028486,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
