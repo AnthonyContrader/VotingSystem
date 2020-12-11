@@ -1,0 +1,50 @@
+<div class="container" >
+  <div class="row justify-content-center">
+    <div class="col-md-6" style="background-color:  rgb(218 , 218, 231); box-shadow: 2px 2px 15px 3px rgb(174, 174, 192);">
+      <div class="row justify-content-center">
+      <div class="col-md-10" style="text-align: center; background-color: white; margin: 2%;">
+      <!-- titolo -->
+      <div class="row" style="width: 100%; margin: 2%; border-bottom: 1px solid  rgb(218 , 218, 231);">
+        <h2 style=" vertical-align: middle;"><span style="font-size: 30px; color: red;">{{ scheda.titolo }}</span></h2>
+      </div>
+      <!-- Domanda -->
+        <div class="row" style="width: 100%; margin: 2%;">
+          <h6 style="width: 100%; font-size: small; color: green; font-style: italic; overflow-y: auto;">{{ scheda.domanda }}</h6>
+        </div>
+        </div>
+       </div>
+  
+      <!-- form risposte -->
+        <div class="row">
+          <div class="col">
+          <form (ngSubmit)="submit(voto)">
+            <input type="text" [(ngModel)]="voto.scheda" name="id_scheda" style="display: none;">
+            <input type="text" [(ngModel)]="voto.utente" name="id_utente" style="display: none;">
+            <div class="row row1">
+              
+              <input type="radio" name="voto" id="r1" [(ngModel)]="voto.voto" value="1">
+              <label for="r1"><span>{{scheda.primarisposta}}</span></label>
+            </div>
+            <div class="row row2">
+              
+              <input type="radio" name="voto" id="r2" [(ngModel)]="voto.voto" value="2">
+              <label for="r2"><span>{{scheda.secondarisposta}}</span></label>
+            </div>
+            <div class="row row2">
+              
+              <input type="radio" name="voto" id="r3" [(ngModel)]="voto.voto" value="3">
+              <label for="r3"><span>{{scheda.terzarisposta}}</span></label>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">invia</button>
+              </div>
+            </div>
+            
+          </form>
+          </div>
+        </div>
+      </div>
+      </div>  
+  
+  </div>

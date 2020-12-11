@@ -1,0 +1,81 @@
+<div>
+    <h2>
+        <span id="schede-management-page-heading">Schede</span>
+
+        <button class="btn btn-primary float-right jh-create-entity" [routerLink]="['schede/scheda-edit']">
+            <fa-icon icon="plus"></fa-icon> <span>Create a new scheda</span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="table-responsive" *ngIf="schedeList">
+        <table class="table table-striped" aria-describedby="schede-management-page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" >
+                    <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titolo"><span>Titolo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="domanda"><span>Domanda</span> <fa-icon icon="sort"></fa-icon></th>                    
+                    <th scope="col"  jhiSortBy="risposta1"><span>Risposta1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="risposta2"><span>Risposta2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="risposta3"><span>Risposta3</span> <fa-icon icon="sort"></fa-icon></th> 
+                    <th scope="col"></th>                  
+                </tr>
+            </thead>
+            <tbody *ngIf="schedeList">
+                <tr *ngFor="let sch of schedeList; ">
+                    <td><a >{{ sch.id }}</a></td>
+                    <td>{{ sch.titolo }}</td>
+                    <td>{{ sch.domanda }}</td>                    
+                    <td>{{ sch.primarisposta }}</td>
+                    <td>{{ sch.secondarisposta }}</td>
+                    <td>{{ sch.terzarisposta }}</td>  
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['schede/scheda-lettura', { id: sch.id }]" 
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['schede/scheda-edit',{id:sch.id}]"
+                                    queryParamsHandling="merge"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="button" 
+                                    class="btn btn-danger btn-sm" (click)="deleteScheda(sch.id)" >
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                            <button type="button" 
+                                    [routerLink]="['schede/scheda-statistica',{id:sch.id}]"
+                                    queryParamsHandling="merge"
+                                    class="btn btn-dark btn-sm"  >
+                                <fa-icon icon="chart-bar"></fa-icon>
+                                <span class="d-none d-md-inline">STAT</span>
+                            </button>
+                        </div>
+                    </td>                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="schedeList">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="transition()"></ngb-pagination>
+        </div>
+    </div>
+</div>
+

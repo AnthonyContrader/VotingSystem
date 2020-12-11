@@ -1,0 +1,35 @@
+<div>
+    <h2>
+        <span id="schede-management-page-heading">Schede</span>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="table-responsive" *ngIf="listaSchede">
+        <table class="table table-striped" aria-describedby="schede-management-page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col" ><span>Titolo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>                  
+                </tr>
+            </thead>
+            <tbody *ngIf="listaSchede">
+                <tr *ngFor="let sch of listaSchede; ">
+                    <td><a >{{ sch.id }}</a></td>
+                    <td>{{ sch.titolo }}</td> 
+                    <td>
+                    <div *ngIf="sch.votato; then thenBlock else elseBlock"></div>  
+                        <ng-template #thenBlock><fa-icon icon="circle" style="color: green;"></fa-icon></ng-template>            
+                        <ng-template #elseBlock><a [routerLink]="['../../user/scheda-voto', {idScheda: sch.id}]" >
+                            <fa-icon icon="circle" style="color: red;"></fa-icon>
+                            </a>
+                        </ng-template>
+                    </td>    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

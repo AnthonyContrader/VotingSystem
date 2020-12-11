@@ -1,0 +1,94 @@
+
+h2{
+    span{
+        text-align: center;
+    }
+}
+
+h3{
+    span{
+        text-align: center;
+    }
+}
+
+
+
+input[type=radio] {
+	display: none;
+}
+.row1 {
+	label {
+		cursor: pointer;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		color: white;
+        position: relative;
+        font-size: x-large;
+        text-align: center;
+		&:hover {
+			background: rgb(173, 173, 201);
+		}
+	}
+	input[type=radio] {
+		&:checked {
+			+ {
+				label {
+					background: rgb(173, 173, 201);
+				}
+			}
+		}
+	}
+}
+.row2 {
+	label {
+		cursor: pointer;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		color: white;
+        position: relative;
+        font-size: x-large;
+        text-align: center;
+		&:hover {
+			background: rgb(173, 173, 201);
+		}
+	}
+	input[type=radio] {
+		&:checked {
+			+ {
+				label {
+					background: rgb(173, 173, 201);
+				}
+			}
+		}
+	}
+}
+.row3 {
+	label {
+		cursor: pointer;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		color: white;
+        position: relative;
+        font-size: x-large;
+        text-align: center;
+		&:hover {
+			background: rgb(173, 173, 201);
+		}
+	}
+	input[type=radio] {
+		&:checked {
+			+ {
+				label {
+					background: rgb(173, 173, 201);
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,35 @@
+<div>
+    <h2>
+        <span id="schede-management-page-heading">Voti</span>
+    </h2>
+    <div class="searchBar ">
+    
+        <input class="form-control" id="cerca" type="text"placeholder="Inserire id utente"
+        [(ngModel)]="searchId" autocomplete="off"/>
+      </div>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="table-responsive" *ngIf="listaVoti">
+        <table class="table table-striped" aria-describedby="schede-management-page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID Utente</span> </th>
+                    <th scope="col" ><span>ID Scheda</span> </th>
+                    <th scope="col"><span>Voto</span> </th>                  
+                </tr>
+            </thead>
+            <tbody *ngIf="listaVoti">
+                <tr *ngFor="let voto of (listaVoti | filterid:searchId) ">
+                    <td><a >{{ voto.utente }}</a></td>
+                    <td>{{ voto.scheda }}</td> 
+                    <td>{{ voto.voto }}</td> 
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" (click)="showPlus()"> Show more </button>
+        <button class="btn btn-secondary" (click)="showLess()"> Show less </button>
+    </div>
+</div>
