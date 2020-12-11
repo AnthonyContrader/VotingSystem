@@ -1,6 +1,6 @@
 package com.contrader.web.rest;
 
-import com.contrader.service.DomandeService;
+import com.contrader.service.impl.DomandeServiceImpl;
 import com.contrader.web.rest.errors.BadRequestAlertException;
 import com.contrader.service.dto.DomandeDTO;
 
@@ -37,9 +37,9 @@ public class DomandeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final DomandeService domandeService;
+    private final DomandeServiceImpl domandeService;
 
-    public DomandeResource(DomandeService domandeService) {
+    public DomandeResource(DomandeServiceImpl domandeService) {
         this.domandeService = domandeService;
     }
 

@@ -1,6 +1,6 @@
 package com.contrader.web.rest;
 
-import com.contrader.service.NotificaService;
+import com.contrader.service.impl.NotificaServiceImpl;
 import com.contrader.web.rest.errors.BadRequestAlertException;
 import com.contrader.service.dto.NotificaDTO;
 
@@ -38,9 +38,9 @@ public class NotificaResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final NotificaService notificaService;
+    private final NotificaServiceImpl notificaService;
 
-    public NotificaResource(NotificaService notificaService) {
+    public NotificaResource(NotificaServiceImpl notificaService) {
         this.notificaService = notificaService;
     }
 

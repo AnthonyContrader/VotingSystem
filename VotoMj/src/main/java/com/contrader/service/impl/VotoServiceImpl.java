@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -86,5 +87,25 @@ public class VotoServiceImpl implements VotoService {
     	ar[1] = (double) votoRepository.countVoto(id_scheda, (long) 2);
     	ar[2] = (double) votoRepository.countVoto(id_scheda, (long) 3);
     	return ar;
+    }
+    
+    @Transactional(readOnly = true)
+    public double countUtentiVoti() {
+    	
+    	log.debug("Request to get the number of user's vote");
+    	
+    	return votoRepository.countUtentiVoti();
+    }
+    
+    @Transactional(readOnly = true)
+    public Long[] getIdSchedeConVotoUtente(Long id_utente) {
+    	
+    	log.debug("Request to get the list of id's scheda with id utente{}:", id_utente);
+    	List<Voto> voti = votoRepository.getAllIdSchedaByUser(id_utente);
+    	Long[] arr = new Long[voti.size()];
+    	for(int i = 0; i < arr.length; i++) 
+    		arr[i] = voti.get(i).getScheda();
+    	
+    	return arr;
     }
 }

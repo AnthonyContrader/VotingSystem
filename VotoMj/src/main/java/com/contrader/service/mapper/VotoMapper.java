@@ -24,5 +24,7 @@ public interface VotoMapper extends EntityMapper<VotoDTO, Voto> {
         voto.setId(id);
         return voto;
     }
+    
+    
 
 }

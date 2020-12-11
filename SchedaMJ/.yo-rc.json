@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.contrader.microservizioscheda",
+      "nativeLanguage": "it"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "Scheda",
+    "packageName": "com.contrader.microservizioscheda",
+    "packageFolder": "com/contrader/microservizioscheda",
+    "serverPort": "8084",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YTQwNjE3NGQ4M2Q1MjJjMWNkYTZhODAxMTExYzdiODI1OTYxOTFkNjNhMzk4ZGIyMTg2NzY5YTkxZGE1MmViZGQwZGZjYTdkZjY5ZWEzYjkwZGNjZjVjZTc3N2NlZWU4YzJlZTA1Mzk2YjYxNjViNzRjMzQ3NThjMWJhODhlMjY=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1607013114741,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "it",
+    "languages": ["it", "en"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true,
+    "lastLiquibaseTimestamp": 1607013430000
+  }
+}

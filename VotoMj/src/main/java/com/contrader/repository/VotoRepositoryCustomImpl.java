@@ -2,6 +2,8 @@ package com.contrader.repository;
 
 
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -52,6 +54,30 @@ public class VotoRepositoryCustomImpl implements VotoRepositoryCustom {
 			
 		}
 		return null;
+	}
+
+	@Override
+	public double countUtentiVoti() {
+		//creteria query per contare il numero di utenti che hanno votato
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Long> cqv = cb.createQuery(Long.class);
+				
+		Root<Voto> votoEntity = cqv.from(Voto.class);
+				
+		cqv.select(cb.count(votoEntity));
+		return em.createQuery(cqv).getSingleResult();
+	}
+
+	@Override
+	public List<Voto> getAllIdSchedaByUser(Long id_utente) {
+		List<Voto> items;
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Voto> cqv = cb.createQuery(Voto.class);
+		Root<Voto> voto = cqv.from(Voto.class);
+		Predicate utenteVoto = cb.equal(voto.get("utente"), id_utente);
+		cqv.select(voto).where(utenteVoto);
+		items = em.createQuery(cqv).getResultList();
+		return items;
 	}
 	
 }

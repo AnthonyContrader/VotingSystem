@@ -10,6 +10,7 @@ import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -17,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import javax.validation.Valid;
 import java.net.URI;
@@ -117,24 +119,33 @@ public class VotoResource {
      * @param id the id of the votoDTO to delete.
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
-    @DeleteMapping("/votos/{id}")
+    @DeleteMapping("/votos/{id}")//aggiungere integer per contare il numero di righe cancellate
     public ResponseEntity<Void> deleteVoto(@PathVariable Long id) {
         log.debug("REST request to delete Voto : {}", id);
         votoService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
     
-    @GetMapping("/count-voti/{idScheda}")
+    @GetMapping("/votos/count-voti/{idScheda}")
     public ResponseEntity<double[]> countVoti(@PathVariable Long idScheda) {
         log.debug("REST request to count voti scheda : {}", idScheda);
         return ResponseEntity.ok().body(votoService.getStatistica(idScheda));
     	
     }
     
-    @GetMapping("/check-user")
-    public ResponseEntity<Boolean> checkVotoUtenteScheda(@RequestParam("id_utente") Long id_utente, @RequestParam("id_scheda") Long id_scheda ) {
-        log.debug("REST request to check voto utente scheda : {}");
-    	return ResponseEntity.ok().body(votoService.checkUser(id_utente, id_scheda));
+    @GetMapping("/votos/schede-voto-utente/{id_utente}")
+
+    public ResponseEntity<Long[]> getSchedeVotoUtente(@PathVariable Long id_utente){
+    	Long[] listaSchedeVotoUtente = votoService.getIdSchedeConVotoUtente(id_utente);
+    	return ResponseEntity.ok().body(listaSchedeVotoUtente);
+    }
+    
+    
+    @GetMapping("/votos/count-utenti-voti")
+    public ResponseEntity<Double> counUtentiVoti() {
+        log.debug("REST request to count voti");
+        return ResponseEntity.ok().body(votoService.countUtentiVoti());
+    	
     }
     
 }
